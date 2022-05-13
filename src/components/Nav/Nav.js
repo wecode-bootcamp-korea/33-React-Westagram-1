@@ -5,7 +5,7 @@ const Nav = () => {
     <nav className="nav-container">
       <ul className="nav-list">
         <li>
-          <i className="fa-brands fa-instagram"></i>
+          <i className="fa-brands fa-instagram" />
           <span className="nav-logo-letter">Westagram</span>
         </li>
         <li>
