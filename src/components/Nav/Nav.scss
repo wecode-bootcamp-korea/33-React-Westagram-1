@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.nav-container {
+.navContainer {
   width: 100%;
   height: 60px;
   padding: 13px 0;
@@ -19,7 +19,7 @@
     padding-right: 8px;
     border-right: 2px solid black;
   }
-  .nav-list {
+  .navList {
     width: 90%;
     height: 100%;
     max-width: 935px;
@@ -27,12 +27,12 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    .nav-logo-letter {
+    .navLogoLetter {
       font-family: 'Lobster', cursive;
       line-height: 33px;
       cursor: pointer;
     }
-    .nav-input {
+    .navInput {
       height: 100%;
       width: 260px;
       padding: 0 16px;
@@ -45,7 +45,7 @@
         text-align: center;
       }
     }
-    .nav-icon-area {
+    .navIconArea {
       display: flex;
       align-items: center;
       i {

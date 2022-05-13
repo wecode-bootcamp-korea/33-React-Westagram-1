@@ -2,16 +2,16 @@ import './Nav.scss';
 
 const Nav = () => {
   return (
-    <nav className="nav-container">
-      <ul className="nav-list">
+    <nav className="navContainer">
+      <ul className="navList">
         <li>
           <i className="fa-brands fa-instagram" />
-          <span className="nav-logo-letter">Westagram</span>
+          <span className="navLogoLetter">Westagram</span>
         </li>
         <li>
-          <input className="nav-input" type="text" placeholder="검색" />
+          <input className="navInput" type="text" placeholder="검색" />
         </li>
-        <li className="nav-icon-area">
+        <li className="navIconArea">
           <i className="fa-regular fa-compass" />
           <i className="fa-regular fa-heart" />
           <i className="fa-regular fa-user" />
