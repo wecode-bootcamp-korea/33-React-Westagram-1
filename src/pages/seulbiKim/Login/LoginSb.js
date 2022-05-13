@@ -37,7 +37,13 @@ const LoginSb = () => {
               placeholder="비밀번호"
               onChange={handlePwInput}
             />
-            <button className="loginBtn" onClick={goToMain}>
+            <button
+              className="loginBtn"
+              onClick={goToMain}
+              disabled={
+                idValue.includes('@') && pwValue.length >= 5 ? false : true
+              }
+            >
               로그인
             </button>
           </form>
