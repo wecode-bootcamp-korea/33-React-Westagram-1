@@ -18,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-.main-page {
+.mainPage {
   p span {
     font-weight: 700;
   }
@@ -38,7 +38,7 @@ a {
     border-bottom: 1px solid rgb(219, 219, 219);
     background-color: #fff;
 
-    .nav__container {
+    .navContainer {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,26 +46,26 @@ a {
       max-width: 930px;
     }
 
-    .nav__logo {
+    .navLogo {
       position: relative;
       display: flex;
       align-items: center;
     }
 
-    .nav__logo-text {
+    .navLogoText {
       font-family: 'Lobster', cursive;
       font-size: 28px;
     }
 
-    .nav__search__container {
+    .navSearchContainer {
       position: relative;
     }
 
-    .nav__search {
+    .navSearch {
       margin: 10px;
     }
 
-    .nav__search input {
+    .navSearch input {
       width: 230px;
       height: 32px;
       padding: 6px 10px 3px 38px;
@@ -88,60 +88,60 @@ a {
       }
     }
 
-    .nav__icons img {
+    .navIcons img {
       height: 23px;
       margin: 0 8px;
       cursor: pointer;
     }
 
     /* search list */
-    ul.search {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      top: 65px;
-      left: -40px;
-      width: 350px;
-      height: 350px;
-      padding: 15px;
-      border-radius: 5px;
-      background-color: white;
-      box-shadow: 0px 0px 8px -4px rgb(162, 162, 162);
-      overflow-y: scroll;
+    //   ul.search {
+    //     position: absolute;
+    //     display: flex;
+    //     flex-direction: column;
+    //     top: 65px;
+    //     left: -40px;
+    //     width: 350px;
+    //     height: 350px;
+    //     padding: 15px;
+    //     border-radius: 5px;
+    //     background-color: white;
+    //     box-shadow: 0px 0px 8px -4px rgb(162, 162, 162);
+    //     overflow-y: scroll;
 
-      li.search__list {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid rgb(216, 216, 216);
+    //     li.search__list {
+    //       display: flex;
+    //       align-items: center;
+    //       margin-bottom: 15px;
+    //       padding-bottom: 15px;
+    //       border-bottom: 1px solid rgb(216, 216, 216);
 
-        .search__list__user-img {
-          width: 45px;
-          border-radius: 50%;
-          margin-right: 15px;
-        }
+    //       .search__list__user-img {
+    //         width: 45px;
+    //         border-radius: 50%;
+    //         margin-right: 15px;
+    //       }
 
-        .search__list__user-data {
-          display: flex;
-          flex-direction: column;
+    //       .search__list__user-data {
+    //         display: flex;
+    //         flex-direction: column;
 
-          .list__user-data__id {
-            font-size: 15px;
-            font-weight: 600;
-          }
+    //         .list__user-data__id {
+    //           font-size: 15px;
+    //           font-weight: 600;
+    //         }
 
-          .list__user-data__name {
-            font-size: 13px;
-            color: rgb(162, 162, 162);
-          }
-        }
-      }
-    }
+    //         .list__user-data__name {
+    //           font-size: 13px;
+    //           color: rgb(162, 162, 162);
+    //         }
+    //       }
+    //     }
+    //   }
 
-    .search.hidden {
-      display: none;
-    }
+    //   .search.hidden {
+    //     display: none;
+    //   }
   }
 
   /* main */
@@ -150,7 +150,7 @@ a {
     justify-content: center;
     margin-top: 30px;
 
-    .main__container {
+    .mainContainer {
       display: flex;
       max-width: 930px;
     }
@@ -177,11 +177,11 @@ a {
       padding: 0 20px;
     }
 
-    .article__header__profile {
+    .articleHeaderProfile {
       display: flex;
       align-items: center;
 
-      .article__header__profile-img {
+      .articleHeaderProfileImg {
         width: 32px;
         height: 32px;
         margin-right: 15px;
@@ -189,100 +189,97 @@ a {
         object-fit: cover;
       }
 
-      .article__header__profile-name {
+      .articleHeaderProfileName {
         font-weight: 600;
       }
     }
 
-    .article__header__more .fa-ellipsis {
-      color: rgb(63, 63, 63);
-      cursor: pointer;
-    }
-    .article__header__more img {
+    .articleHeaderMore img {
       width: 23px;
       color: rgb(55, 55, 55);
+      cursor: pointer;
     }
 
-    .article__img img {
+    .articleImg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
     /* article__data */
-    .article-data {
+    .articleData {
       display: flex;
       flex-direction: column;
       padding: 15px 15px 0 15px;
     }
 
-    .article-data__icons {
+    .articleDataIcons {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .article-data__icons-left {
+    .articleDataIconLeft {
       display: flex;
       align-items: center;
     }
 
-    .article-data__icons-heart {
+    .articleDataIconHeart {
       margin-right: 0px;
       font-size: 30px;
       cursor: pointer;
     }
 
-    .article-data__icons-remove {
+    .articleDataIconsRemove {
       font-size: 18px;
       cursor: pointer;
       margin-left: 5px;
       color: rgb(180, 180, 180);
     }
 
-    .article-data__icons-left img,
-    .article-data__icons-right {
+    .articleDataIconsLeft img,
+    .articleDataIconRight {
       height: 23px;
       margin-left: 15px;
       cursor: pointer;
     }
 
-    .article-data__icons-right {
+    .articleDataIconRight {
       margin-right: 0;
     }
 
-    .article-data__reaction {
+    .articleDataReaction {
       margin-top: 10px;
     }
 
-    .reaction__liked {
+    .reactionLiked {
       margin-top: 8px;
       font-weight: 600;
     }
 
-    .reaction__author-post {
+    .reactionAuthorPost {
       margin-top: 10px;
     }
 
     /* comments */
-    .reaction__comments {
+    .reactionComments {
       display: flex;
       flex-direction: column;
     }
 
-    .reaction__comments ul li {
+    .reactionComments ul li {
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .reaction__comments ul li .comments__commented {
+    .reactionComments ul li .commentsCommented {
       flex: 1;
       margin-top: 5px;
     }
 
-    li .article-data__icons-heart {
+    li .articleDataIconsHeart {
       cursor: pointer;
       font-size: 20px;
     }
@@ -291,24 +288,24 @@ a {
       color: rgb(255, 73, 73);
     }
 
-    .reaction__comments ul li img {
+    .reactionComments ul li img {
       width: 15px;
       margin-left: 10px;
       cursor: pointer;
     }
 
     /* comments date */
-    .reaction__comments .date {
+    .reactionComments .date {
       margin: 8px 0;
       color: rgb(180, 180, 180);
     }
 
-    .reaction__comments .date span {
+    .reactionComments .date span {
       font-size: 12px;
     }
 
     /* comments form */
-    .comment-form {
+    .commentForm {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -316,14 +313,14 @@ a {
       border-top: 1px solid rgb(219, 219, 219);
     }
 
-    .comment-form img {
+    .commentForm img {
       width: 23px;
       height: 23px;
       margin-right: 10px;
       cursor: pointer;
     }
 
-    .comment-form input {
+    .commentForm input {
       flex: 8;
       height: 20px;
       border: 0;
@@ -334,7 +331,7 @@ a {
       }
     }
 
-    .comment-form button {
+    .commentForm button {
       width: 50px;
       border: none;
       color: rgb(117, 190, 235);
@@ -345,35 +342,35 @@ a {
       cursor: pointer;
     }
 
-    .comment-form button.active {
+    .commentForm button.active {
       color: rgb(30, 151, 226);
     }
 
     /* main-right */
-    .main-right__container {
+    .mainRightContainer {
       width: 300px;
       margin-left: 20px;
     }
 
-    .main-right {
+    .mainRight {
       position: fixed;
       display: flex;
       flex-direction: column;
       width: 300px;
     }
 
-    .main-right__profile {
+    .mainRightProfile {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .main-right__profile__left {
+    .mainRightProfileLeft {
       display: flex;
       align-items: center;
     }
 
-    .main-right__profile__left__img {
+    .mainRightProfileLeftImg {
       width: 56px;
       height: 56px;
       margin-right: 10px;
@@ -381,59 +378,59 @@ a {
       object-fit: cover;
     }
 
-    .main-right__profile__left__id-data {
+    .mainRightProfileLeftIdData {
       display: flex;
       flex-direction: column;
     }
 
-    .main-right__profile__left__id-data span:first-child {
+    .mainRightProfileLeftIdData span:first-child {
       font-weight: 600;
     }
-    .main-right__profile__left__id-data span:last-child {
+    .mainRightProfileLeftIdData span:last-child {
       margin-top: 2px;
       color: gray;
     }
 
-    .main-right__profile__id-switch {
+    .mainRightProfileIdSwitch {
       color: rgb(11, 161, 255);
       font-size: 14px;
     }
 
-    .main-right__recommend {
+    .mainRightRecommend {
       margin-top: 25px;
     }
 
-    .main-right__recommend__title {
+    .mainRightRecommendTitle {
       display: flex;
       justify-content: space-between;
     }
 
-    .main-right__recommend__title span {
+    .mainRightRecommendTitle span {
       color: gray;
       font-weight: 600;
     }
 
-    .main-right__recommend__title a {
+    .mainRightRecommendTitle a {
       color: black;
       font-size: 12px;
     }
 
-    .main-right__recommend__list {
+    .mainRightRecommendList {
       margin-top: 15px;
     }
 
-    .main-right__recommend__list li {
+    .mainRightRecommendList li {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 15px;
     }
 
-    .main-right__recommend__list-left {
+    .mainRightRecommendListLeft {
       display: flex;
     }
 
-    .recommend__list__img {
+    .recommendListImg {
       width: 35px;
       height: 35px;
       margin-right: 10px;
@@ -441,40 +438,40 @@ a {
       object-fit: cover;
     }
 
-    .recommend__list__info {
+    .recommendListInfo {
       display: flex;
       flex-direction: column;
     }
 
-    .recommend__list__info-id {
+    .recommendListInfoId {
       font-size: 14px;
       font-weight: 600;
     }
 
-    .recommend__list__info-follow {
+    .recommendListInfoFollow {
       color: gray;
       font-size: 12px;
     }
 
-    .recommend__list__follow-btn {
+    .recommendListFollowBtn {
       color: rgb(11, 161, 255);
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
     }
 
-    .main-right__footer {
+    .mainRightFooter {
       margin-top: 40px;
     }
 
-    .main-right__footer ul {
+    .mainRightFooter ul {
       display: flex;
       flex-wrap: wrap;
       color: rgb(180, 180, 180);
       font-size: 12px;
     }
 
-    .main-right__footer li {
+    .mainRightFooter li {
       position: relative;
       margin-right: 10px;
     }

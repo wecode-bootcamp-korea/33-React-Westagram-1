@@ -10,22 +10,22 @@ const LoginSb = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="loginPage">
       <div className="login">
-        <main className="login__container">
-          <h1 className="login__logo">westagram</h1>
-          <form className="login__form" action="./main.html">
+        <main className="loginContainer">
+          <h1 className="loginLogo">westagram</h1>
+          <form className="loginForm" action="./main.html">
             <input
               type="text"
-              className="login__input-id"
+              className="loginInputId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
               type="password"
-              className="login__input-pw"
+              className="loginInputPw"
               placeholder="비밀번호"
             />
-            <button className="login__btn" onClick={goToMain}>
+            <button className="loginBtn" onClick={goToMain}>
               로그인
             </button>
           </form>

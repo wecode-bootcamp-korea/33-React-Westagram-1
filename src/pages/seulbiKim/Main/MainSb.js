@@ -5,14 +5,14 @@ import { CgRemove } from 'react-icons/cg';
 
 const MainSb = () => {
   return (
-    <div className="main-page">
+    <div className="mainPage">
       <nav>
-        <div className="nav__container">
-          <div className="nav__logo">
-            <h2 className="nav__logo-text">westagram</h2>
+        <div className="navContainer">
+          <div className="navLogo">
+            <h2 className="navLogoText">westagram</h2>
           </div>
-          <div className="nav__search__container">
-            <form className="nav__search">
+          <div className="navSearchContainer">
+            <form className="navSearch">
               <input type="text" placeholder="검색" />
             </form>
             {/*  search list */}
@@ -43,7 +43,7 @@ const MainSb = () => {
             </ul> */}
           </div>
 
-          <div className="nav__icons">
+          <div className="navIcons">
             <img alt="home icon" src="/images/seulbiKim/home.png" />
             <img alt="send icon" src="/images/seulbiKim/send.png" />
             <img alt="plus icon" src="/images/seulbiKim/plus.png" />
@@ -65,84 +65,81 @@ const MainSb = () => {
 
       {/*  main */}
       <main>
-        <div className="main__container">
+        <div className="mainContainer">
           <div className="feeds">
             {/*  article */}
             <article>
               {/*  article__header */}
               <header>
-                <div className="article__header__profile">
+                <div className="articleHeaderProfile">
                   <img
                     alt="puppy"
                     src="/images/seulbiKim/profile02.png"
-                    className="article__header__profile-img"
+                    className="articleHeaderProfileImg"
                   />
-                  <span className="article__header__profile-name">
-                    {' '}
-                    hahihuheho{' '}
-                  </span>
+                  <span className="articleHeaderProfileName"> hahihuheho </span>
                 </div>
-                <div className="article__header__more">
+                <div className="articleHeaderMore">
                   <img alt="more icon" src="/images/seulbiKim/more.png" />
                 </div>
               </header>
 
               {/*  article__main im */}
-              <div className="article__img">
+              <div className="articleImg">
                 <img alt="white cat" src="/images/seulbiKim/cat2.jpeg" />
               </div>
 
               {/*  article__data */}
-              <div className="article-data">
-                <div className="article-data__icons">
-                  <div className="article-data__icons-left">
-                    <AiOutlineHeart className="article-data__icons-heart" />
-                    <AiFillHeart className="article-data__icons-heart fill" />
+              <div className="articleData">
+                <div className="articleDataIcons">
+                  <div className="articleDataIconsLeft">
+                    <AiOutlineHeart className="articleDataIconHeart" />
+                    <AiFillHeart className="articleDataIconHeart fill" />
                     <img alt="chat icon" src="/images/seulbiKim/chat.png" />
                     <img alt="send icon" src="/images/seulbiKim/send.png" />
                   </div>
                   <img
                     alt="bookmark icon"
                     src="/images/seulbiKim/bookmark.png"
-                    className="article-data__icons-right"
+                    className="articleDataIconRight"
                   />
                 </div>
-                <div className="article-data__reaction">
-                  <div className="reaction__liked">
+                <div className="articleDataIeaction">
+                  <div className="reactionLiked">
                     <span> 좋아요 126개</span>
                   </div>
-                  <div className="reaction__author-post">
+                  <div className="reactionAuthorPost">
                     <p>
                       <span>hahihuheho</span> 먼치킨 고양이 :)
                     </p>
                   </div>
 
                   {/*  article__comments */}
-                  <div className="reaction__comments">
+                  <div className="reactionComments">
                     <ul>
                       <li>
-                        <div className="comments__commented">
+                        <div className="commentsCommented">
                           <p>
                             <span>test</span> comment
                           </p>
                         </div>
-                        <AiOutlineHeart className="article-data__icons-heart" />
-                        <AiFillHeart className="article-data__icons-heart fill" />
-                        <CgRemove className="article-data__icons-remove" />
+                        <AiOutlineHeart className="articleDataIconsHeart" />
+                        <AiFillHeart className="articleDataIconsHeart fill" />
+                        <CgRemove className="articleDataIconsRemove" />
                       </li>
                     </ul>
                     <div className="date">
                       <span>1분 전</span>
                     </div>
                   </div>
-                  <form className="comment-form">
+                  <form className="commentForm">
                     <img alt="smile icon" src="/images/seulbiKim/smile.png" />
                     <input
                       type="textarea"
                       placeholder="댓글달기..."
-                      className="comment-input"
+                      className="commentInput"
                     />
-                    <button className="comment-btn">게시</button>
+                    <button className="commentBtn">게시</button>
                   </form>
                 </div>
               </div>
@@ -150,82 +147,82 @@ const MainSb = () => {
           </div>
 
           {/*  main-right */}
-          <div className="main-right__container">
-            <div className="main-right">
-              <header className="main-right__profile">
-                <div className="main-right__profile__left">
+          <div className="mainRightContainer">
+            <div className="mainRight">
+              <header className="mainRightProfile">
+                <div className="mainRightProfileLeft">
                   <img
                     alt="dog"
                     src="/images/seulbiKim/profile.jpg"
-                    className="main-right__profile__left__img"
+                    className="mainRightProfileLeftImg"
                   />
-                  <div className="main-right__profile__left__id-data">
+                  <div className="mainRightProfileLeftIdData">
                     <span>seul0606</span>
                     <span>seul</span>
                   </div>
                 </div>
-                <a href="#" className="main-right__profile__id-switch">
+                <a href="#" className="mainRightProfileIdSwitch">
                   전환
                 </a>
               </header>
 
-              <div className="main-right__recommend">
-                <div className="main-right__recommend__title">
+              <div className="mainRightRecommend">
+                <div className="mainRightRecommendTitle">
                   <span>회원님을 위한 추천</span>
                   <a href="#">모두 보기</a>
                 </div>
-                <ul className="main-right__recommend__list">
+                <ul className="mainRightRecommendList">
                   <li>
-                    <div className="main-right__recommend__list-left">
+                    <div className="mainRightRecommendListLeft">
                       <img
                         alt="fox"
                         src="/images/seulbiKim/profile01.png"
-                        className="recommend__list__img"
+                        className="recommendListImg"
                       />
-                      <div className="recommend__list__info">
-                        <div className="recommend__list__info-id">fox</div>
-                        <div className="recommend__list__info-follow">
+                      <div className="recommendListInfo">
+                        <div className="recommendListInfoId">fox</div>
+                        <div className="recommendListInfoFollow">
                           hamster님 외 5명이 팔로우합니다.
                         </div>
                       </div>
                     </div>
-                    <span className="recommend__list__follow-btn">팔로우</span>
+                    <span className="recommendListFollowBtn">팔로우</span>
                   </li>
                   <li>
-                    <div className="main-right__recommend__list-left">
+                    <div className="mainRightRecommendListLeft">
                       <img
                         alt="hamster"
                         src="/images/seulbiKim/profile00.jpg"
-                        className="recommend__list__img"
+                        className="recommendListImg"
                       />
-                      <div className="recommend__list__info">
-                        <div className="recommend__list__info-id">hamster</div>
-                        <div className="recommend__list__info-follow">
+                      <div className="recommendListInfo">
+                        <div className="recommendListInfoId">hamster</div>
+                        <div className="recommendListInfoFollow">
                           cat님 외 8명이 팔로우합니다.
                         </div>
                       </div>
                     </div>
-                    <span className="recommend__list__follow-btn">팔로우</span>
+                    <span className="recommendListFollowBtn">팔로우</span>
                   </li>
                   <li>
-                    <div className="main-right__recommend__list-left">
+                    <div className="mainRightRecommendListLeft">
                       <img
                         alt="cat"
                         src="/images/seulbiKim/profile03.png"
-                        className="recommend__list__img"
+                        className="recommendListImg"
                       />
-                      <div className="recommend__list__info">
-                        <div className="recommend__list__info-id">catbox</div>
-                        <div className="recommend__list__info-follow">
+                      <div className="recommendListInfo">
+                        <div className="recommendListInfoId">catbox</div>
+                        <div className="recommendListInfoFollow">
                           ggobi님 외 12명이 팔로우합니다.
                         </div>
                       </div>
                     </div>
-                    <span className="recommend__list__follow-btn">팔로우</span>
+                    <span className="recommendListFollowBtn">팔로우</span>
                   </li>
                 </ul>
               </div>
-              <footer className="main-right__footer">
+              <footer className="mainRightFooter">
                 <ul>
                   <li>소개</li>
                   <li>도움말</li>
