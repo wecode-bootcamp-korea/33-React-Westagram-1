@@ -1,0 +1,434 @@
+.main {
+  nav {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    top: 0;
+  }
+
+  .navBox {
+    display: flex;
+    justify-content: space-between;
+    width: 1600px;
+    align-items: center;
+    background-color: white;
+  }
+
+  .leftLogo {
+    display: flex;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: #262626;
+    margin-left: 200px;
+  }
+
+  .instaLogo {
+    padding-right: 5px;
+  }
+
+  .mainLogoFont {
+    border-left: 2px solid #262626;
+    padding-left: 5px;
+    background-color: white;
+  }
+
+  .searchWrap {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchBar {
+    width: 268px;
+    height: 36px;
+    border: 2px solid #dbdbdb;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    color: #a5a5a5;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  input::placeholder {
+    margin-left: -13px;
+  }
+
+  .telescope {
+    position: absolute;
+    background-color: #f0f0f0;
+    margin-right: 60px;
+  }
+
+  .rightImgSrc {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-right: 200px;
+  }
+
+  .rightImgSrc img {
+    background-color: white;
+    margin-right: 20px;
+  }
+
+  .rightImgSrc img:last-child {
+    /* flex줬더니 마지막 값도 늘어나서 원상보구 시킴*/
+    margin-right: 0;
+  }
+  /*여기서 부터 하단 피드 CSS*/
+
+  /*메인피드 정렬*/
+  article {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+
+  .feedAsideContainer {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .feed {
+    width: 614px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feedImg {
+    vertical-align: bottom;
+  }
+
+  .checkImg {
+    top: 0;
+    width: 614px;
+    height: 54px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .checkImgLeft {
+    background-color: white;
+    margin-left: 10px;
+  }
+
+  .checkImgLeft img {
+    margin: 6px;
+  }
+
+  .feedBookmark {
+    margin: 20px;
+  }
+
+  .checkImg img {
+    width: 20px;
+  }
+
+  .likeFeed {
+    width: 614px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .likesWho {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-left: 10px;
+  }
+
+  .smallProfile {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #a5a5a5;
+    margin-right: 10px;
+  }
+  .likeFeed span {
+    background-color: white;
+  }
+
+  .boldFont {
+    font-weight: bold;
+    background-color: white;
+  }
+
+  .articleText {
+    margin: 10px 0px;
+    background-color: white;
+  }
+  .whatText {
+    margin-left: 10px;
+    background-color: white;
+  }
+
+  .likeFeedUsername {
+    font-weight: bold;
+    background-color: white;
+  }
+
+  /*댓글 창*/
+  .commentBackground {
+    background-color: white;
+    display: flex;
+  }
+  .comments {
+    width: 614px;
+    background-color: white;
+  }
+
+  input {
+    width: 614px;
+    height: 30px;
+    border: none;
+    border: 1px solid #a5a5a5;
+    background-color: white;
+  }
+  li {
+    list-style: none;
+    background-color: white;
+  }
+  .commentsBox {
+    background-color: white;
+  }
+  /*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/
+  .neighborhoodProfile {
+    width: 614px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .neighborImg {
+    width: 40px;
+    border-radius: 40px;
+    border: 1px solid #e6e6e6;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .neighborhoodProfile span {
+    background-color: white;
+  }
+
+  .neighborhoodPofile span:last-of-type {
+    margin-left: 440px;
+  }
+
+  /*여기서부터 aisde시작*/
+  .mainRight {
+    width: 293px;
+    height: auto;
+    position: fixed;
+    right: 100px;
+
+    .myIdImg {
+      display: flex;
+      align-items: center;
+      margin-bottom: -30px;
+
+      .myProfile {
+        border-radius: 40px;
+      }
+
+      .myStory {
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  /*스토리 위에 상단 내 아이디값 보여지는 부분*/
+
+  .profileInfo {
+    padding-left: 40px;
+    color: #9b9b9b;
+  }
+
+  /*스토리 보여지는 부분*/
+  .storyBox {
+    width: 293px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+  }
+  .storyBoxTop {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+
+  .storyBox span {
+    font-size: 15px;
+  }
+
+  .storyBoxTop span:first-child {
+    color: #9b9b9b;
+    padding-left: 20px;
+    background-color: white;
+  }
+
+  .storyBoxTop span:last-child {
+    padding-right: 20px;
+    background-color: white;
+  }
+
+  .storyNeighborInfo {
+    background-color: white;
+  }
+
+  .storyNeighborList {
+    list-style: none;
+    margin-left: -20px;
+    background-color: white;
+  }
+
+  .storyIdImg {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: -10px;
+  }
+
+  .storyNeighborhood {
+    width: 30px;
+    border-radius: 30px;
+  }
+
+  .storyIdImg span {
+    margin-left: 10px;
+    background-color: white;
+  }
+
+  .agoMinuteFont {
+    font-size: 13px;
+    color: #a5a5a5;
+    padding-left: 40px;
+    background-color: white;
+  }
+
+  /*회원님을 위한 추천 부분*/
+  .boxRecommend {
+    width: 293px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+  }
+
+  .boxRecommenedText {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+
+  .boxRecommenedText span {
+    font-size: 15px;
+  }
+  .boxRecommenedText span:first-child {
+    padding-left: 20px;
+    background-color: white;
+    color: #9b9b9b;
+  }
+
+  .boxRecommenedText span:last-child {
+    padding-right: 20px;
+    background-color: white;
+  }
+
+  .recommendPeople {
+    background-color: white;
+  }
+
+  .recommendPeopleInfo {
+    background-color: white;
+  }
+
+  .recommendPeopleList {
+    list-style: none;
+    margin-left: -20px;
+    background-color: white;
+    margin-bottom: 10px;
+  }
+
+  .recommnedIdImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    margin-bottom: -5px;
+  }
+
+  .recommendNeighbor {
+    border-radius: 20px;
+    background-color: white;
+  }
+
+  .neighborId {
+    padding-left: 10px;
+    background-color: white;
+  }
+
+  .recommnedIdImg span {
+    margin-left: 10px;
+    background-color: white;
+  }
+
+  .blueFont {
+    font-size: 13px;
+    font-weight: bold;
+    color: #3e99ed;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    background-color: white;
+  }
+
+  .littleFont {
+    color: #a5a5a5;
+    font-size: 13px;
+    background-color: white;
+    padding-left: 40px;
+  }
+
+  /* footer시작 */
+  footer {
+    color: #c7c7c7;
+    font-size: 13px;
+  }
+
+  /*반응형 웹사이트*/
+  @media (max-width: 800px) {
+    .main_right {
+      display: none;
+    }
+  }
+}
