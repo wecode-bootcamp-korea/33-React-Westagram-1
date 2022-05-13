@@ -1,12 +1,14 @@
 import React from 'react';
 import './MainHr.scss';
+import Nav from '../../../components/Nav/Nav';
 
 const MainHr = () => {
   return (
     <div>
       <div className="insta">
         <div className="container">
-          <nav>
+          <Nav />
+          {/* <nav>
             <div className="rightNav">
               <div className="logo">
                 <i className="fa-brands fa-instagram"></i>
@@ -30,7 +32,7 @@ const MainHr = () => {
                 <i className="fa-regular fa-user"></i>
               </div>
             </div>
-          </nav>
+          </nav> */}
           <main>
             <div className="feeds">
               <div className="container">

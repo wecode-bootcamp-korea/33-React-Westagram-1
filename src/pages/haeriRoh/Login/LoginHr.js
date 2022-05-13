@@ -1,12 +1,22 @@
 import React from 'react';
 import './LoginHr.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginHr = () => {
+  const [inputId, setInputId] = useState('');
+  const [inputPw, setInputPw] = useState('');
   const navigate = useNavigate();
 
   const goToMain = () => {
     navigate('/MainHr');
+  };
+
+  const handleIdInput = event => {
+    console.log('찍히나?!');
+  };
+  const handlePwInput = event => {
+    console.log('찍힌다!!');
   };
 
   return (
@@ -25,6 +35,7 @@ const LoginHr = () => {
                       type="text"
                       className="id"
                       placeholder="전화번호, 사용자 이름 또는 이메일"
+                      onChange={handleIdInput}
                     />
                   </div>
                   <div className="input1">
@@ -32,6 +43,7 @@ const LoginHr = () => {
                       type="password"
                       className="pw"
                       placeholder="비밀번호"
+                      onChange={handlePwInput}
                     />
                   </div>
                 </div>
