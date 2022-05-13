@@ -1,0 +1,135 @@
+$fa-color: #fafafa;
+$wh-color: white;
+$focus-line: 1px solid gray;
+$border-style: 1px solid #dbdbdb;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* css code */
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  @include flex-center();
+  background-color: $fa-color;
+
+  .container {
+    width: 340px;
+    @include flex-center();
+  }
+
+  .lineBox {
+    width: 320px;
+    height: 370px;
+    border: $border-style;
+    background-color: $wh-color;
+  }
+
+  .contentsBox {
+    width: 100%;
+    height: 100%;
+
+    .logo {
+      width: 100%;
+      height: 130px;
+      @include flex-center();
+
+      .logoName {
+        font-family: 'Lobster', cursive;
+        font-size: 37px;
+      }
+    }
+
+    .loginBox {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .inputs {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .input1 {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          .id {
+            width: 250px;
+            height: 37px;
+            border-radius: 3px;
+            border: $border-style;
+            background-color: $fa-color;
+          }
+
+          .id:focus {
+            outline: $focus-line;
+          }
+
+          .pw {
+            width: 250px;
+            height: 37px;
+            border-radius: 3px;
+            border: $border-style;
+            background-color: $fa-color;
+          }
+
+          .pw:focus {
+            outline: $focus-line;
+          }
+        }
+      }
+
+      .btnBox {
+        width: 100%;
+        height: 40px;
+        @include flex-center();
+
+        .loginBtn {
+          width: 250px;
+          height: 35px;
+          color: $wh-color;
+          font-weight: bold;
+          border: 0.5px solid #fafafa;
+          border-radius: 5px;
+          cursor: pointer;
+          background-color: #0095f6;
+        }
+
+        .loginBtn:disabled {
+          background-color: rgb(168, 202, 244); /* 흐린 색상의 배경 적용 */
+        }
+      }
+    }
+
+    .findBox {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      .findPw {
+        color: #00376b;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
