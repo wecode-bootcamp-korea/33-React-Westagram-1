@@ -2,67 +2,12 @@ import React from 'react';
 import './MainSb.scss';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { CgRemove } from 'react-icons/cg';
+import Nav from '../../../components/Nav/Nav';
 
 const MainSb = () => {
   return (
     <div className="mainPage">
-      <nav>
-        <div className="navContainer">
-          <div className="navLogo">
-            <h2 className="navLogoText">westagram</h2>
-          </div>
-          <div className="navSearchContainer">
-            <form className="navSearch">
-              <input type="text" placeholder="검색" />
-            </form>
-            {/*  search list */}
-            {/* <ul className="search hidden">
-              <li className="search__list">
-                <img
-                  alt="user profile img"
-                  src="/images/seulbiKim/cat2.jpeg"
-                  className="search__list__user-img"
-                />
-                <div className="search__list__user-data">
-                  <span className="list__user-data__id"> wecode_bootcamp</span>
-                  <span className="list__user-data__name">>wecode 위코드</span>
-                </div>
-                ../img/
-              </li>
-              <li className="search__list">
-                <img
-                  alt="user profile img"
-                  src="/images/seulbiKim/cat2.jpeg"
-                  className="search__list__user-img"
-                />
-                <div className="search__list__user-data">
-                  <span className="list__user-data__id"> wecode_bootcamp</span>
-                  <span className="list__user-data__name">>wecode 위코드</span>
-                </div>
-              </li>
-            </ul> */}
-          </div>
-
-          <div className="navIcons">
-            <img alt="home icon" src="/images/seulbiKim/home.png" />
-            <img alt="send icon" src="/images/seulbiKim/send.png" />
-            <img alt="plus icon" src="/images/seulbiKim/plus.png" />
-            <img
-              alt="search icon"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-            />
-            <img
-              alt="heart icon"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-            />
-            <img
-              alt="mypage icon"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-            />
-          </div>
-        </div>
-      </nav>
-
+      <Nav />
       {/*  main */}
       <main>
         <div className="mainContainer">

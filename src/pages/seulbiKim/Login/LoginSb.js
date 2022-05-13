@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginSb.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LoginSb = () => {
+  let [idValue, setIdValue] = useState('');
+  let [pwValue, setPwValue] = useState('');
   const navigate = useNavigate();
 
   const goToMain = () => {
     navigate('/main-seulbiKim');
+  };
+
+  const handleIdInput = e => {
+    setIdValue(e.target.value);
+  };
+
+  const handlePwInput = e => {
+    setPwValue(e.target.value);
   };
 
   return (
@@ -19,11 +29,13 @@ const LoginSb = () => {
               type="text"
               className="loginInputId"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              onChange={handleIdInput}
             />
             <input
               type="password"
               className="loginInputPw"
               placeholder="비밀번호"
+              onChange={handlePwInput}
             />
             <button className="loginBtn" onClick={goToMain}>
               로그인
