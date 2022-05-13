@@ -1,25 +1,10 @@
 import './MainSj.scss';
+import Nav from '../../../components/Nav/Nav';
 
 function MainSj() {
   return (
     <div className="main">
-      <nav className="navContainer">
-        <ul className="navList">
-          <li>
-            <i className="fa-brands fa-instagram"></i>
-            <span className="navLogoLetter">| Westagram</span>
-          </li>
-          <li>
-            <input className="navInput" type="text" placeholder="검색" />
-          </li>
-          <li className="navIconArea">
-            <img src="/images/soojungAn/explore.png" alt="explore" />
-            <img src="/images/soojungAn/heart.png" alt="heart" />
-            <img src="/images/soojungAn/profile.png" alt="profile" />
-          </li>
-        </ul>
-      </nav>
-
+      <Nav />
       <main className="feedsRightContainer">
         <div className="storyFeeds">
           <div className="storyArea">
