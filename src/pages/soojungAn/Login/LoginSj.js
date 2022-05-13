@@ -24,11 +24,13 @@ function LoginSj() {
     });
   };
 
+  const valid = id.includes('@') && pw.length >= 5;
+
   return (
     <div className="login">
       <div className="loginContainer">
         <h1 className="title">Westagram</h1>
-        <section className="loginArea">
+        <form type="submit" className="loginArea">
           <input
             id="emailInput"
             type="text"
@@ -45,10 +47,15 @@ function LoginSj() {
             value={pw}
             name="pw"
           />
-          <button className="loginBtn" disabled onClick={goToMain}>
+          <button
+            type="submit"
+            className={'loginBtn ' + (valid ? 'btnActive' : '')}
+            disabled={!valid}
+            onClick={goToMain}
+          >
             로그인
           </button>
-        </section>
+        </form>
         <footer className="findPsw">
           <a href="#">비밀번호를 잊으셨나요?</a>
         </footer>

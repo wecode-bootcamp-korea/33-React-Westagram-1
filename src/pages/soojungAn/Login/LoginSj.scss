@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .login {
-  // body {
-  //     height: 100vh;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  // }
-
-  // @font-face {
-  //     src: url('../../font/Lobster-Regular.ttf');
-  //     font-family: 'Lobster-Regular';
-  // }
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -53,19 +42,6 @@
           font-size: 15px;
         }
       }
-
-      .loginBtn {
-        width: 100%;
-        padding: 13px;
-        background-color: rgba(var(--d69, 0, 149, 246), 1);
-        opacity: 0.3;
-        color: white;
-        font-size: 17px;
-        font-weight: 600;
-        border-radius: 5px;
-        border: none;
-        margin-top: 10px;
-      }
     }
 
     .findPsw {
@@ -79,6 +55,19 @@
         color: rgb(27, 53, 113);
       }
     }
+  }
+
+  .loginBtn {
+    width: 100%;
+    padding: 13px;
+    background-color: rgba(var(--d69, 0, 149, 246), 1);
+    opacity: 0.3;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
   }
 
   .btnActive {
