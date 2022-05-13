@@ -1,0 +1,15 @@
+.replyContainer {
+  height: 20px;
+  margin-top: 5px;
+
+  span:first-child {
+    font-weight: bold;
+    margin: 0 5px;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+    color: rgb(92, 92, 92);
+  }
+}

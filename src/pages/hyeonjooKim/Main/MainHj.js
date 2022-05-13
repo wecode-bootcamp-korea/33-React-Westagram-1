@@ -1,6 +1,29 @@
+import { useState } from 'react';
+import InputReply from './InputReply';
+import Reply from './Reply';
 import './MainHj.scss';
 
 function MainHj() {
+  const [reply, setReply] = useState([]);
+  const [replyId, setReplyId] = useState(0);
+
+  const saveReply = inputValue => {
+    setReply(prevState => {
+      return [
+        ...prevState,
+        {
+          id: replyId,
+          content: inputValue,
+        },
+      ];
+    });
+    setReplyId(prevState => prevState + 1);
+  };
+
+  const deleteReply = id => {
+    setReply(reply.filter(ele => ele.id !== id));
+  };
+
   return (
     <div className="main">
       <section className="westagram">
@@ -12,7 +35,7 @@ function MainHj() {
           <div className="searchSection">
             <input type="text" className="searchBar" placeholder="검색" />
             <div className="searchPopup" />
-            <div className="searchPopup Pointer" />
+            <div className="searchPopup pointer" />
           </div>
           <div className="userMenuSection">
             <i className="fa-regular fa-compass" />
@@ -38,7 +61,7 @@ function MainHj() {
                   <p>로그아웃</p>
                 </div>
               </div>
-              <div className="profilePopup Pointer" />
+              <div className="profilePopup pointer" />
             </button>
           </div>
         </nav>
@@ -75,16 +98,18 @@ function MainHj() {
                 <p>
                   <span className="userId">wecode</span> 맥주 다시 개시합니다
                 </p>
+                {reply.map((ele, idx, arr) => (
+                  <Reply
+                    key={ele.id}
+                    id={ele.id}
+                    items={arr}
+                    content={ele.content}
+                    onClickDeleteBtn={deleteReply}
+                  />
+                ))}
               </div>
             </article>
-            <div className="replySection">
-              <input
-                type="text"
-                className="reply"
-                placeholder=" 댓글 달기..."
-              />
-              <button disabled>게시</button>
-            </div>
+            <InputReply onInputReply={saveReply} />
           </section>
           <section className="mainRight">
             <div className="userId">
@@ -109,7 +134,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>hj_lee</span>
+                  <span>Ballast Point</span>
                 </li>
                 <li>
                   <div className="profileImgContainer">
@@ -118,7 +143,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>hj_park</span>
+                  <span>Goose Island</span>
                 </li>
                 <li>
                   <div className="profileImgContainer">
@@ -127,7 +152,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>hj_choi</span>
+                  <span>Amazing Brewing Company</span>
                 </li>
               </ul>
             </div>
@@ -144,7 +169,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>aaaaaaaaaa</span>
+                  <span>Lager</span>
                   <span>팔로우</span>
                 </li>
                 <li>
@@ -154,7 +179,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>bbbbbbbbbb</span>
+                  <span>Stout</span>
                   <span>팔로우</span>
                 </li>
                 <li>
@@ -164,7 +189,7 @@ function MainHj() {
                       alt="profile"
                     />
                   </div>
-                  <span>cccccccccc</span>
+                  <span>Pale Ale</span>
                   <span>팔로우</span>
                 </li>
               </ul>
