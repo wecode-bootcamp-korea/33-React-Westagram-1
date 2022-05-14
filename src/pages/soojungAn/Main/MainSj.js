@@ -1,7 +1,24 @@
 import './MainSj.scss';
 import Nav from '../../../components/Nav/Nav';
+import { useState } from 'react';
 
 function MainSj() {
+  const [inputValue, setInputValue] = useState('');
+  const [commentList, setCommentList] = useState([]);
+
+  const isValid = inputValue.length > 0;
+
+  const handleInput = e => {
+    setInputValue(e.target.value);
+  };
+
+  const post = () => {
+    let copy = [...commentList];
+    copy.push(inputValue);
+    setCommentList(copy);
+    setInputValue('');
+  };
+
   return (
     <div className="main">
       <Nav />
@@ -53,21 +70,47 @@ function MainSj() {
                   <span>나비가 내 코에 앉았어오</span>
                 </div>
                 <div className="commentShow">댓글 5개 모두보기</div>
-                <div className="commentContainer"></div>
+                <div className="commentContainer">
+                  {commentList.map((eachComment, i) => {
+                    return (
+                      <div key={i} className="commentLetter">
+                        <div className="commentLetterLeft">
+                          <span className="commentNickname">
+                            Naman_himdurum
+                          </span>
+                          <span>{eachComment}</span>
+                        </div>
+                        <div className="commentLetterRight">
+                          <i className="fa-solid fa-trash commentDelete"></i>
+                          <i className="fa-regular fa-heart commentHeart "></i>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               <div className="dateBefore">1일전</div>
               <footer className="footer">
-                <div className="postingCommentArea">
+                <form className="postingCommentArea">
                   <i className="fa-regular fa-face-grin"></i>
                   <input
                     className="postingInput"
                     type="text"
                     placeholder="댓글달기..."
+                    onChange={handleInput}
+                    value={inputValue}
                   />
-                  <button disabled className="postingBtn">
+                  <button
+                    type="submit"
+                    disabled={!isValid}
+                    className={
+                      'postingBtn ' + (isValid ? 'buttonActivate' : '')
+                    }
+                    onClick={post}
+                  >
                     게시
                   </button>
-                </div>
+                </form>
               </footer>
             </article>
           </div>

@@ -165,6 +165,7 @@
               margin-bottom: 4px;
 
               a {
+                margin-right: 5px;
                 color: black;
                 font-weight: 600;
               }
@@ -186,11 +187,9 @@
                 justify-content: space-between;
                 margin-bottom: 4px;
                 .commentLetterLeft {
-                  span {
+                  .commentNickname {
                     margin-right: 5px;
-                    .commentNickname {
-                      font-weight: 600;
-                    }
+                    font-weight: 600;
                   }
                 }
 
@@ -200,15 +199,17 @@
 
                   i {
                     margin-left: 10px;
-
-                    .commentDelete:hover {
+                  }
+                  .commentDelete {
+                    // margin-left: 10px;
+                    &:hover {
                       color: rgb(255, 0, 0, 0.7);
                       cursor: pointer;
                     }
-                    .commentHeart:hover {
-                      color: pink;
-                      cursor: pointer;
-                    }
+                  }
+                  .commentHeart:hover {
+                    color: pink;
+                    cursor: pointer;
                   }
                 }
               }
@@ -249,6 +250,10 @@
                 font-size: 15px;
                 color: rgba(var(--d69, 0, 149, 246), 1);
                 opacity: 0.5;
+              }
+              .buttonActivate {
+                opacity: 1;
+                cursor: pointer;
               }
             }
           }
@@ -327,10 +332,10 @@
     }
   }
 
-  .buttonActivate {
-    opacity: 1;
-    cursor: pointer;
-  }
+  // .buttonActivate {
+  //   opacity: 1;
+  //   cursor: pointer;
+  // }
 
   .heartBtnColor {
     color: pink;
