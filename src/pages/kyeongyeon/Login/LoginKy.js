@@ -6,7 +6,7 @@ const LoginKy = () => {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    navigate('/main');
+    navigate('/main-kyeongyeon');
   };
 
   const [inputId, setInputId] = useState(''); //useState를 사용해서 변하는 값을 set함수로 받음
@@ -52,7 +52,6 @@ const LoginKy = () => {
                 onClick={goToMain}
                 type="button"
                 id="activeButton"
-                onclick=" location.href = 'mainpage.html'"
                 disabled={
                   inputId.includes('@') && inputPw.length > 4 ? false : true
                 }
