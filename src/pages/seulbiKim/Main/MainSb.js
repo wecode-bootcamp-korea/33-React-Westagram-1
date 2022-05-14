@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './MainSb.scss';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { CgRemove } from 'react-icons/cg';
 import Nav from '../../../components/Nav/Nav';
 
 const MainSb = () => {
+  const [comment, setComment] = useState('');
+  const [commentArr, setCommentArr] = useState([]);
+  const nextId = useRef(1);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const copyArr = [...commentArr];
+    if (e.target.comment.value !== '')
+      copyArr.push({ id: nextId.current, name: 'seul', comment: comment });
+    setCommentArr(copyArr);
+    e.target.comment.value = '';
+    nextId.current += 1;
+  };
+
+  const handleComment = e => {
+    e.preventDefault();
+    setComment(e.target.value);
+  };
+
   return (
     <div className="mainPage">
       <Nav />
@@ -62,25 +82,33 @@ const MainSb = () => {
                   {/*  article__comments */}
                   <div className="reactionComments">
                     <ul>
-                      <li>
-                        <div className="commentsCommented">
-                          <p>
-                            <span>test</span> comment
-                          </p>
-                        </div>
-                        <AiOutlineHeart className="articleDataIconsHeart" />
-                        <AiFillHeart className="articleDataIconsHeart fill" />
-                        <CgRemove className="articleDataIconsRemove" />
-                      </li>
+                      {commentArr.map(commentData => (
+                        <li key={commentData.id}>
+                          <div className="commentsCommented">
+                            <p>
+                              <span>{commentData.name}</span>
+                              {commentData.comment}
+                            </p>
+                          </div>
+                          <AiOutlineHeart className="articleDataIconsHeart" />
+                          <AiFillHeart className="articleDataIconsHeart fill" />
+                          <CgRemove className="articleDataIconsRemove" />
+                        </li>
+                      ))}
                     </ul>
                     <div className="date">
                       <span>1분 전</span>
                     </div>
                   </div>
-                  <form className="commentForm">
+                  <form
+                    className="commentForm"
+                    onSubmit={handleSubmit}
+                    onKeyUp={handleComment}
+                  >
                     <img alt="smile icon" src="/images/seulbiKim/smile.png" />
                     <input
                       type="textarea"
+                      name="comment"
                       placeholder="댓글달기..."
                       className="commentInput"
                     />
