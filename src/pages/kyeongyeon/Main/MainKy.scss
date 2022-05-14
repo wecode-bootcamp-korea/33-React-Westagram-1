@@ -92,6 +92,7 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    border: 1px solid #e6e6e6;
   }
 
   .feedAsideContainer {
@@ -196,13 +197,21 @@
   .comments {
     width: 614px;
     background-color: white;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e6e6e6;
   }
 
-  input {
-    width: 614px;
-    height: 30px;
+  .commentsInput {
+    width: 570px;
+    height: 50px;
     border: none;
-    border: 1px solid #a5a5a5;
+    padding-left: 10px;
+    /* border: 1px solid #a5a5a5; */
+    background-color: white;
+  }
+  .commentsBtn {
+    border: none;
     background-color: white;
   }
   li {
@@ -215,13 +224,20 @@
   /*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/
   .neighborhoodProfile {
     width: 614px;
-    height: 50px;
+    height: 70px;
     background-color: white;
-    border: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px;
   }
+  .nProfileLeft {
+    display: flex;
+    align-items: center;
+    background-color: white;
+  }
+
   .neighborImg {
     width: 40px;
     border-radius: 40px;
@@ -234,16 +250,13 @@
     background-color: white;
   }
 
-  .neighborhoodPofile span:last-of-type {
-    margin-left: 440px;
-  }
-
   /*여기서부터 aisde시작*/
   .mainRight {
     width: 293px;
     height: auto;
     position: fixed;
-    right: 100px;
+    right: 70px;
+    margin-top: -50px;
 
     .myIdImg {
       display: flex;
@@ -253,19 +266,21 @@
       .myProfile {
         border-radius: 40px;
       }
-
-      .myStory {
-        p {
-          margin-left: 10px;
-        }
-      }
     }
   }
 
   /*스토리 위에 상단 내 아이디값 보여지는 부분*/
+  .myStory {
+    margin: 33px auto;
+    padding: 10px;
+  }
+  .setProfile {
+    display: flex;
+    flex-direction: column;
+  }
 
   .profileInfo {
-    padding-left: 40px;
+    /* padding-left: 40px; */
     color: #9b9b9b;
   }
 
@@ -301,20 +316,21 @@
   }
 
   .storyNeighborInfo {
+    padding-top: 10px;
     background-color: white;
   }
 
   .storyNeighborList {
     list-style: none;
-    margin-left: -20px;
+    margin-left: 20px;
     background-color: white;
+    padding-top: 10px;
   }
 
   .storyIdImg {
     display: flex;
     align-items: center;
     background-color: white;
-    margin-bottom: -10px;
   }
 
   .storyNeighborhood {
@@ -370,12 +386,13 @@
   }
 
   .recommendPeopleInfo {
+    margin-top: 20px;
     background-color: white;
   }
 
   .recommendPeopleList {
     list-style: none;
-    margin-left: -20px;
+    margin-left: 20px;
     background-color: white;
     margin-bottom: 10px;
   }
@@ -385,7 +402,6 @@
     flex-direction: row;
     align-items: center;
     background-color: white;
-    margin-bottom: -5px;
   }
 
   .recommendNeighbor {

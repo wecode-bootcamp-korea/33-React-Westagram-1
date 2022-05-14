@@ -50,13 +50,17 @@ const MainKy = () => {
         <div className="feed">
           <article>
             <div className="neighborhoodProfile">
-              <img
-                className="neighborImg"
-                src="/images/kyeongyeon/yuntrollpark.png"
-                alt="neighborhood_img"
-              />
-              <span>yeoo_on</span>
-              <span className="neighbor_dots">•••</span>
+              <div className="nProfileLeft">
+                <img
+                  className="neighborImg"
+                  src="/images/kyeongyeon/yuntrollpark.png"
+                  alt="neighborhood_img"
+                />
+                <span>yeoo_on</span>
+              </div>
+              <div className="nProfileRight">
+                <span className="neighborDots">•••</span>
+              </div>
             </div>
             <img
               className="feedImg"
@@ -110,7 +114,12 @@ const MainKy = () => {
             <div className="commentBackground">
               <form className="comments">
                 <ul className="commentsBox" />
-                <input type="text" placeholder="댓글입력" />
+                <input
+                  className="commentsInput"
+                  type="text"
+                  placeholder="댓글입력"
+                />
+                <button className="commentsBtn">게시</button>
               </form>
             </div>
           </article>
@@ -126,9 +135,11 @@ const MainKy = () => {
                 width="40px"
                 height="40px"
               />
-              <p>yeoo_on</p>
+              <div className="setProfile">
+                <p>yeoo_on</p>
+                <span className="profileInfo">Happy day!!!</span>
+              </div>
             </div>
-            <p className="profileInfo">Yeoo_on | Happy day!!!</p>
           </div>
           <div className="storyBox">
             <div className="storyBoxTop">
