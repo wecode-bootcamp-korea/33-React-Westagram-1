@@ -109,7 +109,7 @@ const MainKy = () => {
             </div>
             <div className="commentBackground">
               <form className="comments">
-                <ul className="commentsBox"></ul>
+                <ul className="commentsBox" />
                 <input type="text" placeholder="댓글입력" />
               </form>
             </div>

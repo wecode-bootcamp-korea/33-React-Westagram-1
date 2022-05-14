@@ -62,7 +62,7 @@ const LoginKy = () => {
             </div>
 
             <p>
-              <a href="">비밀번호를 잊으셨나요?</a>
+              <a href="#!">비밀번호를 잊으셨나요?</a>
             </p>
           </div>
         </div>
