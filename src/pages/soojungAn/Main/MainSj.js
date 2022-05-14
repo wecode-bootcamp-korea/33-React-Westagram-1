@@ -1,6 +1,7 @@
 import './MainSj.scss';
 import Nav from '../../../components/Nav/Nav';
 import { useState } from 'react';
+import Comment from './Comment';
 
 function MainSj() {
   const [inputValue, setInputValue] = useState('');
@@ -17,6 +18,13 @@ function MainSj() {
     copy.push(inputValue);
     setCommentList(copy);
     setInputValue('');
+  };
+
+  const remove = e => {
+    let number = parseInt(e.target.id);
+    let copy = [...commentList];
+    copy.splice(number, 1);
+    setCommentList(copy);
   };
 
   return (
@@ -73,18 +81,13 @@ function MainSj() {
                 <div className="commentContainer">
                   {commentList.map((eachComment, i) => {
                     return (
-                      <div key={i} className="commentLetter">
-                        <div className="commentLetterLeft">
-                          <span className="commentNickname">
-                            Naman_himdurum
-                          </span>
-                          <span>{eachComment}</span>
-                        </div>
-                        <div className="commentLetterRight">
-                          <i className="fa-solid fa-trash commentDelete"></i>
-                          <i className="fa-regular fa-heart commentHeart "></i>
-                        </div>
-                      </div>
+                      <Comment
+                        eachComment={eachComment}
+                        i={i}
+                        j
+                        remove={remove}
+                        key={i}
+                      />
                     );
                   })}
                 </div>
