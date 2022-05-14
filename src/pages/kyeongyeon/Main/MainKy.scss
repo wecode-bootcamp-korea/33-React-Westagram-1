@@ -52,7 +52,7 @@
     width: 268px;
     height: 36px;
     border: 2px solid #dbdbdb;
-    background-color: #f0f0f0;
+    background-color: white;
     border-radius: 2px;
     color: #a5a5a5;
     font-size: 15px;
@@ -65,7 +65,7 @@
 
   .telescope {
     position: absolute;
-    background-color: #f0f0f0;
+    background-color: white;
     margin-right: 60px;
   }
 
@@ -88,19 +88,22 @@
   /*여기서 부터 하단 피드 CSS*/
 
   /*메인피드 정렬*/
+
+  .feedAsideContainer {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .containerFeedComments {
+    margin: 50px auto;
+    border: 1px solid #e6e6e6;
+  }
   article {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 1px solid #e6e6e6;
-  }
-
-  .feedAsideContainer {
-    width: 100%;
-    margin-top: 150px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
 
   .feed {
@@ -109,6 +112,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
   }
 
@@ -179,23 +183,31 @@
     margin: 10px 0px;
     background-color: white;
   }
-  .whatText {
-    margin-left: 10px;
+
+  .InputCommentAlign {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    background-color: white;
+  }
+  .commentUserId {
+    font-weight: bold;
+    margin-right: 10px;
     background-color: white;
   }
 
-  .likeFeedUsername {
-    font-weight: bold;
+  .commentUserText {
     background-color: white;
   }
 
   /*댓글 창*/
   .commentBackground {
+    width: 614px;
     background-color: white;
     display: flex;
   }
   .comments {
-    width: 614px;
+    width: 616px;
     background-color: white;
     display: flex;
     align-items: center;
