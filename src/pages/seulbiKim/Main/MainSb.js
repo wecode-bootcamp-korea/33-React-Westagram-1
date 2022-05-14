@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
+import Nav from '../../../components/Nav/Nav';
+import Comment from './component/Comment';
 import './MainSb.scss';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { CgRemove } from 'react-icons/cg';
-import Nav from '../../../components/Nav/Nav';
 
 const MainSb = () => {
   const [comment, setComment] = useState('');
@@ -83,17 +83,10 @@ const MainSb = () => {
                   <div className="reactionComments">
                     <ul>
                       {commentArr.map(commentData => (
-                        <li key={commentData.id}>
-                          <div className="commentsCommented">
-                            <p>
-                              <span>{commentData.name}</span>
-                              {commentData.comment}
-                            </p>
-                          </div>
-                          <AiOutlineHeart className="articleDataIconsHeart" />
-                          <AiFillHeart className="articleDataIconsHeart fill" />
-                          <CgRemove className="articleDataIconsRemove" />
-                        </li>
+                        <Comment
+                          commentData={commentData}
+                          key={commentData.id}
+                        />
                       ))}
                     </ul>
                     <div className="date">
