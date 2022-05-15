@@ -127,7 +127,7 @@ const MainSb = () => {
                     <span>seul</span>
                   </div>
                 </div>
-                <a href="#" className="mainRightProfileIdSwitch">
+                <a href="/" className="mainRightProfileIdSwitch">
                   전환
                 </a>
               </header>
@@ -135,7 +135,7 @@ const MainSb = () => {
               <div className="mainRightRecommend">
                 <div className="mainRightRecommendTitle">
                   <span>회원님을 위한 추천</span>
-                  <a href="#">모두 보기</a>
+                  <a href="/">모두 보기</a>
                 </div>
                 <ul className="mainRightRecommendList">
                   <li>

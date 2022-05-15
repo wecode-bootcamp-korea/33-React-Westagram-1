@@ -48,7 +48,7 @@ const LoginSb = () => {
             </button>
           </form>
           <div className="message">
-            <a className="text" href="#">
+            <a className="text" href="/">
               비밀번호를 잊으셨나요?
             </a>
           </div>
