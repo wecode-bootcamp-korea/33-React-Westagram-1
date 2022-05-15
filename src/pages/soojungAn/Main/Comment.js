@@ -14,8 +14,8 @@ const Comment = ({ eachComment, i, remove }) => {
           onClick={e => {
             remove(e);
           }}
-        ></i>
-        <i className="fa-regular fa-heart commentHeart"></i>
+        />
+        <i className="fa-regular fa-heart commentHeart" />
       </div>
     </div>
   );

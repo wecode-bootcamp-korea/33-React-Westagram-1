@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './LoginSj.scss';
 
@@ -57,7 +57,7 @@ function LoginSj() {
           </button>
         </form>
         <footer className="findPsw">
-          <a href="#">비밀번호를 잊으셨나요?</a>
+          <a href="/">비밀번호를 잊으셨나요?</a>
         </footer>
       </div>
     </div>

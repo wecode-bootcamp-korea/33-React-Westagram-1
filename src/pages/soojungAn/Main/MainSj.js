@@ -34,12 +34,12 @@ function MainSj() {
         <div className="storyFeeds">
           <div className="storyArea">
             <button className="beforeBtn">
-              <i className="fa-solid fa-circle-chevron-left"></i>
+              <i className="fa-solid fa-circle-chevron-left" />
             </button>
             <button className="nextBtn">
-              <i className="fa-solid fa-circle-chevron-right"></i>
+              <i className="fa-solid fa-circle-chevron-right" />
             </button>
-            <div className="storyContainer"></div>
+            <div className="storyContainer" />
           </div>
           <div className="feeds">
             <article className="feedArticle">
@@ -52,7 +52,7 @@ function MainSj() {
                   <span>Hello_World</span>
                 </div>
                 <div className="feedHeaderRight">
-                  <i className="fa-solid fa-ellipsis"></i>
+                  <i className="fa-solid fa-ellipsis" />
                 </div>
               </header>
               <div className="feedContent">
@@ -63,18 +63,18 @@ function MainSj() {
               </div>
               <div className="feedBtnArea">
                 <span>
-                  <i className="fa-regular fa-heart"></i>
-                  <i className="fa-regular fa-comment"></i>
-                  <i className="fa-regular fa-paper-plane"></i>
+                  <i className="fa-regular fa-heart" />
+                  <i className="fa-regular fa-comment" />
+                  <i className="fa-regular fa-paper-plane" />
                 </span>
                 <span>
-                  <i className="fa-regular fa-bookmark"></i>
+                  <i className="fa-regular fa-bookmark" />
                 </span>
               </div>
               <div className="heartNumber">좋아요 2150개</div>
               <div className="letterCommentArea">
                 <div className="postingLetter">
-                  <a href="#">Hello_World</a>
+                  <a href="/">Hello_World</a>
                   <span>나비가 내 코에 앉았어오</span>
                 </div>
                 <div className="commentShow">댓글 5개 모두보기</div>
@@ -95,7 +95,7 @@ function MainSj() {
               <div className="dateBefore">1일전</div>
               <footer className="footer">
                 <form className="postingCommentArea">
-                  <i className="fa-regular fa-face-grin"></i>
+                  <i className="fa-regular fa-face-grin" />
                   <input
                     className="postingInput"
                     type="text"
@@ -129,7 +129,7 @@ function MainSj() {
           <section className="recommend">
             <div className="recommendTitle">
               <span>회원님을 위한 추천</span>
-              <a href="#">모두보기</a>
+              <a href="/">모두보기</a>
             </div>
             <div className="recommendList">
               <div className="recommendListItem">
