@@ -147,6 +147,9 @@
   .checkImg img {
     width: 20px;
   }
+  .feedHeart {
+    cursor: pointer;
+  }
 
   .likeFeed {
     width: 614px;
@@ -243,7 +246,16 @@
     display: flex;
     align-items: center;
     background-color: white;
-    margin: 20px auto;
+    margin: 20px 10px;
+  }
+  .flexNameTextContainer {
+    display: flex;
+  }
+  .flexNameTextIcon {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .commentName {
     width: 80px;
@@ -252,6 +264,19 @@
     background-color: white;
   }
   .commentText {
+    background-color: white;
+  }
+  .heartDeleteIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 30px;
+  }
+  .feedCommentHeart {
+    background-color: white;
+  }
+  .deleteImg {
     background-color: white;
   }
   /*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/

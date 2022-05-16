@@ -7,12 +7,11 @@ const Feed = () => {
     { id: 1, name: 'yeoo_on', text: 'dadaasdas' },
   ]); //리스트를 만들어야 함, 들어온 배열을 문자열로 받겠다.
 
-  /*   const addComment = e => {
-    const inputComment = [...commentArray]; //이 이벤트는 받은 배열들을 다시 배열로 나열해줄거임!!!
-    inputComment.push(comment); //유저가 하나하나 입력한 값을 push로 밀어 넣어줄건데
-    setCommentArray(inputComment);
-    //그 받은 값을 setCommentArray의 useState([])에 최종값을 저장해주겠다!
-  }; */
+  const onRemove = id => {
+    setCommentList(commentList.filter(comment => comment.id !== id));
+    //인자값으로 id를 받고, setCommentList로! commentList에 있는 애들 중에 filter로 반한을 해줄건데,
+    //반환의 조건은 누른 comment의 id와 같지 않은 comment들만 반환!
+  };
 
   const nextId = useRef(2);
 
@@ -28,6 +27,15 @@ const Feed = () => {
       setCommentList(commentList.concat(comment));
 
     nextId.current += 1;
+  };
+
+  const [likedHeart, setLikedHeart] = useState(false);
+  const changeColor = e => {
+    e.preventDefault(); //새로고침
+    e.target.src = likedHeart
+      ? 'images/kyeongyeon/emptyheart.png'
+      : 'images/kyeongyeon/heart123.png';
+    setLikedHeart(!likedHeart);
   };
 
   return (
@@ -57,8 +65,9 @@ const Feed = () => {
             <div className="checkImgLeft">
               <img
                 className="feedHeart"
-                src="/images/kyeongyeon/heart.png"
+                src="/images/kyeongyeon/emptyheart.png"
                 alt="heart"
+                onClick={changeColor}
               />
               <img
                 className="feedBalloonWord"
@@ -90,7 +99,7 @@ const Feed = () => {
               </span>
             </div>
             <div className="feedList">
-              <FeedList commentList={commentList} />
+              <FeedList commentList={commentList} onRemove={onRemove} />
             </div>
           </div>
         </article>
