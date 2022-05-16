@@ -1,10 +1,11 @@
 import React from 'react';
 
-const FeedComments = props => {
+const FeedComments = ({ comment }) => {
+  const { text, name } = comment;
   return (
-    <div className="InputCommentAlign">
-      <div className="commentUserId">{props.userName}</div>
-      <div className="commentUserText">{props.userComment}</div>
+    <div className="commentNameTextContainer">
+      <div className="commentName">{name}</div>
+      <div className="commenttext">{text}</div>
     </div>
   );
 };

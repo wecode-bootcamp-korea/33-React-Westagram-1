@@ -233,6 +233,27 @@
   .commentsBox {
     background-color: white;
   }
+  .feedList {
+    background-color: white;
+  }
+  .feedListBackground {
+    background-color: white;
+  }
+  .commentNameTextContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin: 20px auto;
+  }
+  .commentName {
+    width: 80px;
+    padding-left: 15px;
+    font-weight: bold;
+    background-color: white;
+  }
+  .commentText {
+    background-color: white;
+  }
   /*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/
   .neighborhoodProfile {
     width: 614px;
