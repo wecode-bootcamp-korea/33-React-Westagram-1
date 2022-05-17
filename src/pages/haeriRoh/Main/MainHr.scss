@@ -1,0 +1,471 @@
+$fa-color: #fafafa;
+$wh-color: white;
+$focus-line: 1px solid gray;
+$db-border: 1px solid #dbdbdb;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.insta {
+  @include flex-center();
+
+  .container {
+    width: 100%;
+    height: 100vh;
+
+    nav {
+      width: 100%;
+      height: 60px;
+      border-bottom: $db-border;
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      background-color: white;
+      z-index: 1;
+
+      .rightNav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .logo {
+          width: 50px;
+          height: 50px;
+          @include flex-center();
+
+          .fa-instagram {
+            font-size: 20px;
+          }
+        }
+
+        .bar {
+          height: 21px;
+          border-left: 1px solid black;
+        }
+
+        .nameLogo {
+          width: 120px;
+          height: 50px;
+          @include flex-center();
+
+          span {
+            font-family: 'Lobster', cursive;
+            font-size: 17px;
+          }
+        }
+      }
+
+      .midNav {
+        width: 220px;
+        height: 100%;
+        @include flex-center();
+
+        .search {
+          width: 200px;
+          height: 27px;
+          border: $db-border;
+          border-radius: 2px;
+          background-color: #fafafa;
+          @include flex-center();
+          text-align: center;
+        }
+      }
+
+      .leftNav {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .fa-compass {
+          font-size: 22px;
+        }
+
+        .fa-heart {
+          font-size: 22px;
+        }
+
+        .fa-user {
+          font-size: 22px;
+        }
+      }
+    }
+
+    main {
+      width: 100%;
+      background-color: $fa-color;
+      padding-top: 130px;
+      padding-left: 130px;
+      padding-bottom: 100px;
+
+      .feeds {
+        width: 50%;
+        @include flex-center();
+        //오잉 원래 feeds 안에 container 상자 있는데 밖에 줘도 되나..? 일단 고..
+
+        article {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          .feedBox {
+            width: 500px;
+            height: 100%;
+            background-color: $wh-color;
+            border: $db-border;
+
+            .topFeed {
+              width: 500px;
+              height: 50px;
+              border-bottom: $db-border;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+
+              .idBox {
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                padding-left: 15px;
+
+                .profilePic {
+                  width: 30px;
+                  height: 30px;
+                  background-image: url(../../../assets/images/Haeri/IMG_9480.jpg);
+                  background-size: cover;
+                  border-radius: 50%;
+                }
+                .instaId {
+                  font-weight: bold;
+                  font-size: 15px;
+                  padding-left: 10px;
+                }
+              }
+
+              .more {
+                width: 50px;
+                height: 100%;
+                @include flex-center();
+              }
+            }
+
+            .midFeed {
+              width: 100%;
+              height: 500px;
+              background-image: url(../../../assets/images/Haeri/IMG_8851.jpg);
+              background-size: cover;
+              /* border-right: 1px solid #dbdbdb; */
+            }
+            .bottomFeed {
+              .iconBottom {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .rightIconBottom {
+                  width: 110px;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-evenly;
+                  align-items: center;
+
+                  .fa-heart {
+                    font-size: 22px;
+                    color: red;
+                  }
+
+                  .fa-comment {
+                    font-size: 22px;
+                  }
+
+                  .fa-share-from-square {
+                    font-size: 22px;
+                  }
+                }
+
+                .leftIconBottom {
+                  width: 50px;
+                  height: 100%;
+                  @include flex-center();
+
+                  .fa-bookmark {
+                    font-size: 22px;
+                  }
+                }
+              }
+
+              .likeBottom {
+                width: 100%;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .likeBox {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: space-evenly;
+                  padding-left: 10px;
+
+                  .likePic {
+                    width: 22px;
+                    height: 22px;
+                    background-image: url(../../../assets/images/Haeri/IMG_9480.jpg);
+                    background-size: cover;
+                    border-radius: 50%;
+                  }
+
+                  .likeCount {
+                    font-size: 13px;
+                    padding-left: 7px;
+
+                    b {
+                      font-weight: bold;
+                    }
+                  }
+                }
+              }
+
+              .commentBox {
+                .myComment {
+                  width: 100%;
+                  /* height: 100%; */
+                  padding-top: 5px;
+                  padding-left: 10px;
+                  padding-bottom: 10px;
+                  font-size: 14px;
+
+                  b {
+                    font-weight: bold;
+                  }
+                }
+
+                .otherComment {
+                  li {
+                    list-style: none;
+                  }
+
+                  .msg {
+                    width: 100%;
+                    height: 35px;
+                    border: $db-border;
+                  }
+
+                  .msg:focus {
+                    outline: none;
+                  }
+
+                  .commentsList {
+                    font-size: 14px;
+                  }
+
+                  button {
+                    border: none;
+                    background-color: $wh-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .mainRight {
+        width: 40%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+
+        .rightBox {
+          width: 300px;
+          height: 550px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .myId {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .myPic {
+              width: 50px;
+              height: 50px;
+              background-image: url(../../../assets/images/Haeri/IMG_9480.jpg);
+              background-size: cover;
+              border-radius: 50%;
+              margin-right: 10px;
+            }
+
+            .myIdBox {
+              display: flex;
+              flex-direction: column;
+
+              .myIdName {
+                font-size: 15px;
+
+                b {
+                  font-weight: bold;
+                }
+              }
+
+              .myIdInfo {
+                font-size: 12px;
+                color: gray;
+              }
+            }
+          }
+
+          .story {
+            width: 100%;
+            height: 220px;
+            background-color: $wh-color;
+            border: $db-border;
+            overflow: scroll;
+
+            .topStory {
+              width: 100%;
+              height: 40px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding-right: 15px;
+              padding-left: 15px;
+              font-size: 15px;
+
+              .storyText {
+                color: gray;
+              }
+            }
+
+            .storyBox {
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              padding-left: 15px;
+
+              .storyPic {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: orange;
+              }
+
+              .storyInfo {
+                padding-left: 10px;
+
+                .storyId {
+                  font-size: 15px;
+
+                  b {
+                    font-weight: bold;
+                  }
+                }
+
+                .storyTime {
+                  font-size: 13px;
+                  color: gray;
+                }
+              }
+            }
+          }
+
+          .recommand {
+            width: 100%;
+            height: 150px;
+            background-color: $wh-color;
+            border: $db-border;
+            overflow: scroll;
+
+            .topStory {
+              width: 100%;
+              height: 40px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding-right: 15px;
+              padding-left: 15px;
+              font-size: 15px;
+
+              .storyText {
+                color: gray;
+              }
+            }
+
+            .reBox {
+              width: 100%;
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              padding-left: 15px;
+
+              .reIdBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .rePic {
+                  width: 35px;
+                  height: 35px;
+                  border-radius: 50%;
+                  background-color: orange;
+                }
+
+                .reInfo {
+                  padding-left: 10px;
+
+                  .reId {
+                    font-size: 15px;
+                    font-weight: bold;
+                  }
+
+                  .reFriends {
+                    font-size: 13px;
+                    color: gray;
+                  }
+                }
+              }
+
+              .follow {
+                font-size: 15px;
+                color: #3797f0;
+                font-weight: bold;
+                padding-right: 10px;
+              }
+            }
+          }
+
+          .instaInfo {
+            font-size: 13px;
+            color: gray;
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
