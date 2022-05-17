@@ -52,7 +52,9 @@ const MainHr = () => {
                         </div>
                         <div className="otherComment">
                           {/* <p id="commentsList" /> */}
-                          {댓글}
+                          {댓글.map(function (a) {
+                            return <li>{a}</li>;
+                          })}
                           <input
                             type="text"
                             className="msg"
