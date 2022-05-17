@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "fox",
+    "follow": "hamster님 외 5명이 팔로우합니다.",
+    "img": "/images/seulbiKim/profile01.png"
+  },
+  {
+    "id": 2,
+    "name": "hamster",
+    "follow": " cat님 외 8명이 팔로우합니다.",
+    "img": "/images/seulbiKim/profile00.jpg"
+  },
+  {
+    "id": 3,
+    "name": "catbox",
+    "follow": "ggobi님 외 12명이 팔로우합니다.",
+    "img": "/images/seulbiKim/profile03.png"
+  }
+]
