@@ -1,0 +1,95 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin profileImgStyle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feeds {
+  width: 40%;
+  height: 95%;
+  margin: 0 10px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  margin-top: 2%;
+
+  .writerProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    background-color: white;
+
+    div {
+      @include flex-center;
+      font-weight: bold;
+
+      .profileImgContainer {
+        @include profileImgStyle();
+        border: 1px solid rgb(219, 219, 219);
+        margin: 0 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  .mainContent {
+    height: 80%;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    background-color: white;
+
+    .contentImgContainer {
+      width: 100%;
+      height: 75%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .buttonSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 8%;
+
+      i {
+        color: rgb(92, 92, 92);
+        font-size: 24px;
+        margin: 0 5px;
+      }
+    }
+
+    .textSection {
+      height: 17%;
+      overflow-y: scroll;
+
+      p {
+        padding: 5px;
+        color: black;
+        font-weight: normal;
+
+        .userId {
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

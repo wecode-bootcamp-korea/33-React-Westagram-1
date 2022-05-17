@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Reply.scss';
 
-const Reply = ({ onClickDeleteBtn, content, id }) => {
+const Reply = ({ onClickDeleteBtn, userName, content, id }) => {
   const [isClickLikeBtn, setisClickLikeBtn] = useState(false);
 
   const likeButtonHandeler = event => {
@@ -19,7 +19,7 @@ const Reply = ({ onClickDeleteBtn, content, id }) => {
 
   return (
     <div className="replyContainer">
-      <span>hj_kim</span>
+      <span>{userName}</span>
       <span>{content}</span>
       <button className="btnLike" onClick={likeButtonHandeler}>
         <i className="fa-solid fa-heart" />
