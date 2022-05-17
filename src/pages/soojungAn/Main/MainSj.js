@@ -25,18 +25,35 @@ function MainSj() {
       id: index.current++,
       nickname: 'Nabi',
       comment: inputValue,
+      isLiked: false,
     };
     let copy = [...commentList];
     copy.push(comment);
     setCommentList(copy);
   };
 
-  // const remove = e => {
-  //   let number = parseInt(e.target.id);
-  //   let copy = [...commentList];
-  //   copy.splice(number, 1);
-  //   setCommentList(copy);
-  // };
+  const remove = e => {
+    let clickedId = parseInt(e.target.id);
+    let filter = commentList.filter(item => {
+      return item.id !== clickedId;
+    });
+    setCommentList(filter);
+  };
+
+  console.log('코멘트리스트', commentList);
+
+  const clickHeart = e => {
+    let clickedId = parseInt(e.target.id);
+    let clickedIndex = 0;
+    commentList.forEach((item, index) => {
+      if (item.id === clickedId) {
+        clickedIndex = index;
+      }
+    });
+    let copy = [...commentList];
+    copy[clickedIndex].isLiked = !copy[clickedIndex].isLiked;
+    setCommentList(copy);
+  };
 
   useEffect(() => {
     fetch('/data/soojungAn.json')
@@ -46,8 +63,6 @@ function MainSj() {
         index.current = data.length + 1;
       });
   }, []);
-
-  console.log(commentList);
 
   return (
     <div className="main">
@@ -106,7 +121,8 @@ function MainSj() {
                       <Comment
                         key={user.id}
                         user={user}
-                        // remove={remove}
+                        remove={remove}
+                        clickHeart={clickHeart}
                       />
                     );
                   })}

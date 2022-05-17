@@ -10,12 +10,21 @@ const Comment = props => {
       <div className="commentLetterRight">
         <i
           className="fa-solid fa-trash commentDelete"
-          // id={props.user.id}
-          // onClick={e => {
-          //   remove(e);
-          // }}
+          id={props.user.id}
+          onClick={e => {
+            props.remove(e);
+          }}
         />
-        <i className="fa-regular fa-heart commentHeart" />
+        <i
+          className={
+            'fa-regular fa-heart commentHeart ' +
+            (props.user.isLiked ? 'heartBtnColor' : '')
+          }
+          id={props.user.id}
+          onClick={e => {
+            props.clickHeart(e);
+          }}
+        />
       </div>
     </div>
   );
