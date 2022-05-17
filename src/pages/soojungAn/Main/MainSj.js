@@ -7,11 +7,6 @@ function MainSj() {
   const [inputValue, setInputValue] = useState('');
   const [commentList, setCommentList] = useState([]);
   let index = useRef(0);
-  const [comment, setComment] = useState({
-    id: index.current,
-    nickname: 'Nabi',
-    comment: '',
-  });
 
   const isValid = inputValue.length > 0;
 
@@ -30,6 +25,7 @@ function MainSj() {
     let copy = [...commentList];
     copy.push(comment);
     setCommentList(copy);
+    setInputValue('');
   };
 
   const remove = e => {
@@ -39,8 +35,6 @@ function MainSj() {
     });
     setCommentList(filter);
   };
-
-  console.log('코멘트리스트', commentList);
 
   const clickHeart = e => {
     let clickedId = parseInt(e.target.id);

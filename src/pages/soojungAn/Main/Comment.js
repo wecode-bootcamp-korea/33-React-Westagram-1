@@ -1,28 +1,30 @@
 import React from 'react';
 
-const Comment = props => {
+const Comment = ({ user, remove, clickHeart }) => {
+  const { id, nickname, comment, isLiked } = user;
+
   return (
     <div className="commentLetter">
       <div className="commentLetterLeft">
-        <span className="commentNickname">{props.user.nickname}</span>
-        <span>{props.user.comment}</span>
+        <span className="commentNickname">{nickname}</span>
+        <span>{comment}</span>
       </div>
       <div className="commentLetterRight">
         <i
           className="fa-solid fa-trash commentDelete"
-          id={props.user.id}
+          id={id}
           onClick={e => {
-            props.remove(e);
+            remove(e);
           }}
         />
         <i
           className={
             'fa-regular fa-heart commentHeart ' +
-            (props.user.isLiked ? 'heartBtnColor' : '')
+            (isLiked ? 'heartBtnColor' : '')
           }
-          id={props.user.id}
+          id={id}
           onClick={e => {
-            props.clickHeart(e);
+            clickHeart(e);
           }}
         />
       </div>
