@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Comment = 인풋 => {
+const Comment = props => {
   return (
-    <ul>
-      <li>{인풋}</li>
-    </ul>
+    <div>
+      {props.comment2.map(function (a) {
+        return <li>{a}</li>;
+      })}
+    </div>
   );
 };
 

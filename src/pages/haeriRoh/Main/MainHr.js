@@ -4,8 +4,8 @@ import Nav from '../../../components/Nav/Nav';
 import Comment from './component/Comment';
 
 const MainHr = () => {
-  let [댓글, 댓글변경] = useState([]);
-  let [인풋, 인풋변경] = useState('');
+  let [comment, setComment] = useState([]);
+  let [inputValue, setInputValue] = useState('');
 
   return (
     <div>
@@ -52,23 +52,24 @@ const MainHr = () => {
                         </div>
                         <div className="otherComment">
                           {/* <p id="commentsList" /> */}
-                          {댓글.map(function (a) {
+                          {/* {comment.map(function (a) {
                             return <li>{a}</li>;
-                          })}
+                          })} */}
+                          <Comment comment2={comment} />
                           <input
                             type="text"
                             className="msg"
                             placeholder=" 댓글 달기..."
                             required
                             onChange={e => {
-                              인풋변경(e.target.value);
+                              setInputValue(e.target.value);
                             }}
                           />
                           <button
                             onClick={() => {
-                              let copy = [...댓글];
-                              copy.push(인풋);
-                              댓글변경(copy);
+                              let copy = [...comment];
+                              copy.push(inputValue);
+                              setComment(copy);
                             }}
                           >
                             게시
