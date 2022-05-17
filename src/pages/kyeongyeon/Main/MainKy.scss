@@ -203,6 +203,22 @@
     background-color: white;
   }
 
+  /*본문 글 작성*/
+  .feedContent {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 10px 5px;
+    background-color: white;
+  }
+  .feedContentId {
+    font-weight: bold;
+    padding-left: 15px;
+    background-color: white;
+  }
+  .feedContentText {
+    padding-left: 10px;
+    background-color: white;
+  }
   /*댓글 창*/
   .commentBackground {
     width: 614px;
@@ -246,7 +262,7 @@
     display: flex;
     align-items: center;
     background-color: white;
-    margin: 20px 10px;
+    margin: 5px;
   }
   .flexNameTextContainer {
     display: flex;
@@ -272,6 +288,7 @@
     justify-content: space-between;
     background-color: white;
     width: 30px;
+    margin-right: 20px;
   }
   .feedCommentHeart {
     background-color: white;

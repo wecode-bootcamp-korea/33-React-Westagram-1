@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import FeedList from './FeedList';
 import InputComment from './InputComment';
 
-const Feed = () => {
+const Feed = ({ name, src, text }) => {
   const [commentList, setCommentList] = useState([]); //리스트를 만들어야 함, 들어온 배열을 문자열로 받겠다.
 
   const onRemove = id => {
@@ -12,10 +12,12 @@ const Feed = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3003/data/kyeongyeon.json') //덩어리 제이슨을 받아옴
+    fetch('http://localhost:3000/data/kyeongyeonCommentData.json') //덩어리 제이슨을 받아옴
       .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
-      .then(data => this.setCommentList(data)); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
-  });
+      .then(data => {
+        setCommentList(data);
+      }); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
+  }, []);
 
   const nextId = useRef(2);
 
@@ -59,12 +61,7 @@ const Feed = () => {
               <span className="neighborDots">•••</span>
             </div>
           </div>
-          <img
-            className="feedImg"
-            src="/images/kyeongyeon/yky.jpeg"
-            alt="feed_img"
-            width="614px"
-          />
+          <img className="feedImg" src={src} alt="feed_img" width="614px" />
           <div className="checkImg">
             <div className="checkImgLeft">
               <img
@@ -101,6 +98,10 @@ const Feed = () => {
                 <mark className="boldFont">aineworld</mark>님{' '}
                 <mark className="boldFont">외 10명이</mark>좋아합니다.
               </span>
+            </div>
+            <div className="feedContent">
+              <p className="feedContentId">{name}</p>
+              <p className="feedContentText">{text}</p>
             </div>
             <div className="feedList">
               <FeedList commentList={commentList} onRemove={onRemove} />
