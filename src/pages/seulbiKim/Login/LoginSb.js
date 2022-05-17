@@ -13,6 +13,7 @@ const LoginSb = () => {
     pw: '',
   });
   const { id, pw } = input;
+  const isInputValid = id.includes('@') && pw.length >= 5 ? false : true;
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -45,7 +46,7 @@ const LoginSb = () => {
             <button
               className="loginBtn"
               onClick={goToMain}
-              disabled={id.includes('@') && pw.length >= 5 ? false : true}
+              disabled={isInputValid}
             >
               로그인
             </button>

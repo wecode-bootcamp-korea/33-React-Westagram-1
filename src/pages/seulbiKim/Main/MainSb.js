@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './component/Comment';
 import './MainSb.scss';
@@ -7,11 +7,10 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 const MainSb = () => {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
-  const nextId = useRef(1);
+  const nextId = useRef(4);
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const copyArr = [...commentArr];
     if (e.target.comment.value !== '')
       copyArr.push({ id: nextId.current, name: 'seul', comment: comment });
@@ -24,6 +23,12 @@ const MainSb = () => {
     e.preventDefault();
     setComment(e.target.value);
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/seulbiData.json')
+      .then(res => res.json())
+      .then(data => setCommentArr(data));
+  }, []);
 
   return (
     <div className="mainPage">
