@@ -1,11 +1,17 @@
 import './MainSj.scss';
 import Nav from '../../../components/Nav/Nav';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Comment from './Comment';
 
 function MainSj() {
   const [inputValue, setInputValue] = useState('');
   const [commentList, setCommentList] = useState([]);
+  let index = useRef(0);
+  const [comment, setComment] = useState({
+    id: index.current,
+    nickname: 'Nabi',
+    comment: '',
+  });
 
   const isValid = inputValue.length > 0;
 
@@ -13,19 +19,35 @@ function MainSj() {
     setInputValue(e.target.value);
   };
 
-  const post = () => {
+  const pushToList = e => {
+    e.preventDefault();
+    const comment = {
+      id: index.current++,
+      nickname: 'Nabi',
+      comment: inputValue,
+    };
     let copy = [...commentList];
-    copy.push(inputValue);
+    copy.push(comment);
     setCommentList(copy);
-    setInputValue('');
   };
 
-  const remove = e => {
-    let number = parseInt(e.target.id);
-    let copy = [...commentList];
-    copy.splice(number, 1);
-    setCommentList(copy);
-  };
+  // const remove = e => {
+  //   let number = parseInt(e.target.id);
+  //   let copy = [...commentList];
+  //   copy.splice(number, 1);
+  //   setCommentList(copy);
+  // };
+
+  useEffect(() => {
+    fetch('/data/soojungAn.json')
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+        index.current = data.length + 1;
+      });
+  }, []);
+
+  console.log(commentList);
 
   return (
     <div className="main">
@@ -79,14 +101,12 @@ function MainSj() {
                 </div>
                 <div className="commentShow">댓글 5개 모두보기</div>
                 <div className="commentContainer">
-                  {commentList.map((eachComment, i) => {
+                  {commentList.map(user => {
                     return (
                       <Comment
-                        eachComment={eachComment}
-                        i={i}
-                        j
-                        remove={remove}
-                        key={i}
+                        key={user.id}
+                        user={user}
+                        // remove={remove}
                       />
                     );
                   })}
@@ -94,7 +114,12 @@ function MainSj() {
               </div>
               <div className="dateBefore">1일전</div>
               <footer className="footer">
-                <form className="postingCommentArea">
+                <form
+                  className="postingCommentArea"
+                  onSubmit={e => {
+                    pushToList(e);
+                  }}
+                >
                   <i className="fa-regular fa-face-grin" />
                   <input
                     className="postingInput"
@@ -109,7 +134,6 @@ function MainSj() {
                     className={
                       'postingBtn ' + (isValid ? 'buttonActivate' : '')
                     }
-                    onClick={post}
                   >
                     게시
                   </button>

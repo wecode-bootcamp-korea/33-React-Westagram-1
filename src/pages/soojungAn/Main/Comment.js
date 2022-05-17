@@ -1,19 +1,19 @@
 import React from 'react';
 
-const Comment = ({ eachComment, i, remove }) => {
+const Comment = props => {
   return (
     <div className="commentLetter">
       <div className="commentLetterLeft">
-        <span className="commentNickname">Naman_himdurum</span>
-        <span>{eachComment}</span>
+        <span className="commentNickname">{props.user.nickname}</span>
+        <span>{props.user.comment}</span>
       </div>
       <div className="commentLetterRight">
         <i
           className="fa-solid fa-trash commentDelete"
-          id={i}
-          onClick={e => {
-            remove(e);
-          }}
+          // id={props.user.id}
+          // onClick={e => {
+          //   remove(e);
+          // }}
         />
         <i className="fa-regular fa-heart commentHeart" />
       </div>
