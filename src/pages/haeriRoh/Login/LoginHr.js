@@ -13,10 +13,10 @@ const LoginHr = () => {
   };
 
   const handleIdInput = event => {
-    console.log('찍히나?!');
+    setInputId(event.target.value);
   };
   const handlePwInput = event => {
-    console.log('찍힌다!!');
+    setInputPw(event.target.value);
   };
 
   return (
@@ -48,13 +48,22 @@ const LoginHr = () => {
                   </div>
                 </div>
                 <div className="btnBox">
-                  <button className="loginBtn" type="button" onClick={goToMain}>
+                  <button
+                    className="loginBtn"
+                    type="button"
+                    onClick={goToMain}
+                    disabled={
+                      inputId.includes('@') && inputPw.length >= 5
+                        ? false
+                        : true
+                    }
+                  >
                     로그인
                   </button>
                 </div>
               </div>
               <div className="findBox">
-                <a href="" className="findPw">
+                <a href="#!" className="findPw">
                   비밀번호를 잊으셨나요?
                 </a>
               </div>

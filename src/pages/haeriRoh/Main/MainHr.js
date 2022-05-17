@@ -1,38 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainHr.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './component/Comment';
 
 const MainHr = () => {
+  let [댓글, 댓글변경] = useState([]);
+  let [인풋, 인풋변경] = useState('');
+
   return (
     <div>
       <div className="insta">
         <div className="container">
           <Nav />
-          {/* <nav>
-            <div className="rightNav">
-              <div className="logo">
-                <i className="fa-brands fa-instagram"></i>
-              </div>
-              <div className="bar"></div>
-              <div className="nameLogo">
-                <span>Westagram</span>
-              </div>
-            </div>
-            <div className="midNav">
-              <input className="search" placeholder="검색" />
-            </div>
-            <div className="leftNav">
-              <div className="compass">
-                <i className="fa-regular fa-compass"></i>
-              </div>
-              <div className="heart">
-                <i className="fa-regular fa-heart"></i>
-              </div>
-              <div className="profile">
-                <i className="fa-regular fa-user"></i>
-              </div>
-            </div>
-          </nav> */}
           <main>
             <div className="feeds">
               <div className="container">
@@ -40,28 +19,28 @@ const MainHr = () => {
                   <div className="feedBox">
                     <div className="topFeed">
                       <div className="idBox">
-                        <div className="profilePic"></div>
+                        <div className="profilePic" />
                         <span className="instaId">yesharryy</span>
                       </div>
                       <div className="more">
-                        <i className="fa-solid fa-ellipsis"></i>
+                        <i className="fa-solid fa-ellipsis" />
                       </div>
                     </div>
-                    <div className="midFeed"></div>
+                    <div className="midFeed" />
                     <div className="bottomFeed">
                       <div className="iconBottom">
                         <div className="rightIconBottom">
-                          <i className="fa-solid fa-heart"></i>
-                          <i className="fa-regular fa-comment"></i>
-                          <i className="fa-regular fa-share-from-square"></i>
+                          <i className="fa-solid fa-heart" />
+                          <i className="fa-regular fa-comment" />
+                          <i className="fa-regular fa-share-from-square" />
                         </div>
                         <div className="leftIconBottom">
-                          <i className="fa-regular fa-bookmark"></i>
+                          <i className="fa-regular fa-bookmark" />
                         </div>
                       </div>
                       <div className="likeBottom">
                         <div className="likeBox">
-                          <div className="likePic"></div>
+                          <div className="likePic" />
                           <span className="likeCount">
                             <b>yesharryy</b>님 외 <b>10명</b>이 좋아합니다
                           </span>
@@ -72,15 +51,26 @@ const MainHr = () => {
                           <b>yesharryy</b> 김우주 보고싶어~!!
                         </div>
                         <div className="otherComment">
-                          <p id="todoList"></p>
-                          <form id="todoForm">
-                            <input
-                              type="text"
-                              className="msg"
-                              placeholder=" 댓글 달기..."
-                              required
-                            />
-                          </form>
+                          {/* <p id="commentsList" /> */}
+                          {댓글}
+                          <input
+                            type="text"
+                            className="msg"
+                            placeholder=" 댓글 달기..."
+                            required
+                            onChange={e => {
+                              인풋변경(e.target.value);
+                            }}
+                          />
+                          <button
+                            onClick={() => {
+                              let copy = [...댓글];
+                              copy.push(인풋);
+                              댓글변경(copy);
+                            }}
+                          >
+                            게시
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -90,7 +80,7 @@ const MainHr = () => {
               <div className="mainRight">
                 <div className="rightBox">
                   <div className="myId">
-                    <div className="myPic"></div>
+                    <div className="myPic" />
                     <div className="myIdBox">
                       <span className="myIdName">
                         <b>yesharryy</b>
@@ -104,7 +94,7 @@ const MainHr = () => {
                       <span className="moreText">모두 보기</span>
                     </div>
                     <div className="storyBox">
-                      <div className="storyPic"></div>
+                      <div className="storyPic" />
                       <div className="storyInfo">
                         <div className="storyId">
                           <b>westagram</b>
@@ -113,7 +103,7 @@ const MainHr = () => {
                       </div>
                     </div>
                     <div className="storyBox">
-                      <div className="storyPic"></div>
+                      <div className="storyPic" />
                       <div className="storyInfo">
                         <div className="storyId">
                           <b>westagram</b>
@@ -122,7 +112,7 @@ const MainHr = () => {
                       </div>
                     </div>
                     <div className="storyBox">
-                      <div className="storyPic"></div>
+                      <div className="storyPic" />
                       <div className="storyInfo">
                         <div className="storyId">
                           <b>westagram</b>
@@ -131,7 +121,7 @@ const MainHr = () => {
                       </div>
                     </div>
                     <div className="storyBox">
-                      <div className="storyPic"></div>
+                      <div className="storyPic" />
                       <div className="storyInfo">
                         <div className="storyId">
                           <b>westagram</b>
@@ -140,7 +130,7 @@ const MainHr = () => {
                       </div>
                     </div>
                     <div className="storyBox">
-                      <div className="storyPic"></div>
+                      <div className="storyPic" />
                       <div className="storyInfo">
                         <div className="storyId">
                           <b>westagram</b>
@@ -156,7 +146,7 @@ const MainHr = () => {
                     </div>
                     <div className="reBox">
                       <div className="reIdBox">
-                        <div className="rePic"></div>
+                        <div className="rePic" />
                         <div className="reInfo">
                           <div className="reId">
                             <b>westagram</b>
@@ -168,7 +158,7 @@ const MainHr = () => {
                     </div>
                     <div className="reBox">
                       <div className="reIdBox">
-                        <div className="rePic"></div>
+                        <div className="rePic" />
                         <div className="reInfo">
                           <div className="reId">
                             <b>westagram</b>
@@ -180,7 +170,7 @@ const MainHr = () => {
                     </div>
                     <div className="reBox">
                       <div className="reIdBox">
-                        <div className="rePic"></div>
+                        <div className="rePic" />
                         <div className="reInfo">
                           <div className="reId">
                             <b>westagram</b>
@@ -206,5 +196,13 @@ const MainHr = () => {
     </div>
   );
 };
+
+// function 댓글() {
+//   return (
+//     <ul>
+//       <li>댓글</li>
+//     </ul>
+//   );
+// }
 
 export default MainHr;
