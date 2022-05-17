@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import Feed from './Feed';
-import MainRight from './MainRight';
+import Feed from './FeedComponent/Feed';
+import MainRight from './MainRightComponent/MainRight';
 import './MainHj.scss';
 
 function MainHj() {
