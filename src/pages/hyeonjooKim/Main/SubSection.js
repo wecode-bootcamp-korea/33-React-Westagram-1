@@ -1,3 +1,4 @@
+import UserId from './UserId';
 import './SubSection.scss';
 
 const SubSection = ({ title }) => {
@@ -11,24 +12,21 @@ const SubSection = ({ title }) => {
         {title === '스토리' &&
           stories.map(story => {
             return (
-              <li key={story.id}>
-                <div className="profileImgContainer">
-                  <img src="images/hyeonjooKim/profile01.jpeg" alt="profile" />
-                </div>
-                <span>{story.username}</span>
-              </li>
+              <UserId
+                key={story.id}
+                userName={story.userName}
+                category="story"
+              />
             );
           })}
         {title === '회원님을 위한 추천' &&
           recommendations.map(recommendation => {
             return (
-              <li key={recommendation.id}>
-                <div className="profileImgContainer">
-                  <img src="images/hyeonjooKim/profile01.jpeg" alt="profile" />
-                </div>
-                <span>{recommendation.username}</span>
-                <span>팔로우</span>
-              </li>
+              <UserId
+                key={recommendation.id}
+                userName={recommendation.userName}
+                category="recommendation"
+              />
             );
           })}
       </ul>
@@ -39,30 +37,30 @@ const SubSection = ({ title }) => {
 const stories = [
   {
     id: 1,
-    username: 'Ballast Point',
+    userName: 'Ballast Point',
   },
   {
     id: 2,
-    username: 'Goose Island',
+    userName: 'Goose Island',
   },
   {
     id: 3,
-    username: 'Amazing Brewing Company',
+    userName: 'Amazing Brewing Company',
   },
 ];
 
 const recommendations = [
   {
     id: 1,
-    username: 'Lager',
+    userName: 'Lager',
   },
   {
     id: 2,
-    username: 'Stout',
+    userName: 'Stout',
   },
   {
     id: 3,
-    username: 'Pale Ale',
+    userName: 'Pale Ale',
   },
 ];
 
