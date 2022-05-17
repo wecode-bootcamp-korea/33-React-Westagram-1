@@ -116,6 +116,7 @@ a {
       display: flex;
       flex-direction: column;
       max-width: 614px;
+      margin-bottom: 20px;
       border: 1px solid rgb(219, 219, 219);
       background-color: white;
     }
@@ -170,7 +171,7 @@ a {
       align-items: center;
     }
 
-    .articleDataIconLeft {
+    .articleDataIconsLeft {
       display: flex;
       align-items: center;
     }
@@ -223,11 +224,15 @@ a {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
 
-    .reactionComments ul li .commentsCommented {
-      flex: 1;
-      margin-top: 5px;
+      .commentsCommented {
+        flex: 1;
+        margin-top: 5px;
+
+        span {
+          margin-right: 5px;
+        }
+      }
     }
 
     li .articleDataIconsHeart {

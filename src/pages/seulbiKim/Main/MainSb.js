@@ -1,20 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import Comment from './component/Comment';
 import './MainSb.scss';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+
+import FeedArticle from './component/FeedArticle';
 
 const MainSb = () => {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
+  const [feedList, setFeedList] = useState([]);
   const nextId = useRef(4);
-
   const handleSubmit = e => {
     e.preventDefault();
-    const copyArr = [...commentArr];
     if (e.target.comment.value !== '')
-      copyArr.push({ id: nextId.current, name: 'seul', comment: comment });
-    setCommentArr(copyArr);
+      setCommentArr([
+        ...commentArr,
+        { id: nextId.current, name: 'seul', comment: comment },
+      ]);
     e.target.comment.value = '';
     nextId.current += 1;
   };
@@ -25,96 +26,32 @@ const MainSb = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/seulbiData.json')
+    fetch('http://localhost:3000/data/seulbiCommentData.json')
       .then(res => res.json())
       .then(data => setCommentArr(data));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/seulbiFeedData.json')
+      .then(res => res.json())
+      .then(data => setFeedList(data));
   }, []);
 
   return (
     <div className="mainPage">
       <Nav />
-      {/*  main */}
       <main>
         <div className="mainContainer">
           <div className="feeds">
-            {/*  article */}
-            <article>
-              {/*  article__header */}
-              <header>
-                <div className="articleHeaderProfile">
-                  <img
-                    alt="puppy"
-                    src="/images/seulbiKim/profile02.png"
-                    className="articleHeaderProfileImg"
-                  />
-                  <span className="articleHeaderProfileName"> hahihuheho </span>
-                </div>
-                <div className="articleHeaderMore">
-                  <img alt="more icon" src="/images/seulbiKim/more.png" />
-                </div>
-              </header>
-
-              {/*  article__main im */}
-              <div className="articleImg">
-                <img alt="white cat" src="/images/seulbiKim/cat2.jpeg" />
-              </div>
-
-              {/*  article__data */}
-              <div className="articleData">
-                <div className="articleDataIcons">
-                  <div className="articleDataIconsLeft">
-                    <AiOutlineHeart className="articleDataIconHeart" />
-                    <AiFillHeart className="articleDataIconHeart fill" />
-                    <img alt="chat icon" src="/images/seulbiKim/chat.png" />
-                    <img alt="send icon" src="/images/seulbiKim/send.png" />
-                  </div>
-                  <img
-                    alt="bookmark icon"
-                    src="/images/seulbiKim/bookmark.png"
-                    className="articleDataIconRight"
-                  />
-                </div>
-                <div className="articleDataIeaction">
-                  <div className="reactionLiked">
-                    <span> 좋아요 126개</span>
-                  </div>
-                  <div className="reactionAuthorPost">
-                    <p>
-                      <span>hahihuheho</span> 먼치킨 고양이 :)
-                    </p>
-                  </div>
-
-                  {/*  article__comments */}
-                  <div className="reactionComments">
-                    <ul>
-                      {commentArr.map(commentData => (
-                        <Comment
-                          commentData={commentData}
-                          key={commentData.id}
-                        />
-                      ))}
-                    </ul>
-                    <div className="date">
-                      <span>1분 전</span>
-                    </div>
-                  </div>
-                  <form
-                    className="commentForm"
-                    onSubmit={handleSubmit}
-                    onKeyUp={handleComment}
-                  >
-                    <img alt="smile icon" src="/images/seulbiKim/smile.png" />
-                    <input
-                      type="textarea"
-                      name="comment"
-                      placeholder="댓글달기..."
-                      className="commentInput"
-                    />
-                    <button className="commentBtn">게시</button>
-                  </form>
-                </div>
-              </div>
-            </article>
+            {feedList.map(feedData => (
+              <FeedArticle
+                feedData={feedData}
+                handleSubmit={handleSubmit}
+                commentArr={commentArr}
+                handleComment={handleComment}
+                key={feedData.id}
+              />
+            ))}
           </div>
 
           {/*  main-right */}
