@@ -7,9 +7,13 @@ const FeedList = ({ commentList, onRemove }) => {
   //결국은 누르면 지워지는 함수를 만듬. 함수만 만든거지 결국 실제로 지워지러면 onClick에 해당 함수를 props로 줘야함!
   return (
     <div className="feedListBackground">
-      {commentList.map(props => {
+      {commentList.map(comment => {
         return (
-          <FeedComments comment={props} key={props.id} onRemove={onRemove} />
+          <FeedComments
+            comment={comment}
+            key={comment.id}
+            onRemove={onRemove}
+          />
         );
       })}
     </div>

@@ -1,17 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import FeedList from './FeedList';
 import InputComment from './InputComment';
 
 const Feed = () => {
-  const [commentList, setCommentList] = useState([
-    { id: 1, name: 'yeoo_on', text: 'dadaasdas' },
-  ]); //리스트를 만들어야 함, 들어온 배열을 문자열로 받겠다.
+  const [commentList, setCommentList] = useState([]); //리스트를 만들어야 함, 들어온 배열을 문자열로 받겠다.
 
   const onRemove = id => {
     setCommentList(commentList.filter(comment => comment.id !== id));
     //인자값으로 id를 받고, setCommentList로! commentList에 있는 애들 중에 filter로 반한을 해줄건데,
     //반환의 조건은 누른 comment의 id와 같지 않은 comment들만 반환!
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3003/data/kyeongyeon.json') //덩어리 제이슨을 받아옴
+      .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
+      .then(data => this.setCommentList(data)); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
+  });
 
   const nextId = useRef(2);
 
