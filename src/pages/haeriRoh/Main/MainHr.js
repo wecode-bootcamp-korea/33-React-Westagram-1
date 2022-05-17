@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import './MainHr.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from './component/Comment';
+import StoryBox from './component/StoryBox';
+import ReBox from './component/ReBox';
 
 const MainHr = () => {
   let [comment, setComment] = useState([]);
+  // string[]
+  // {nickname:"yeonuk", comment:"~~~~~"} []
   let [inputValue, setInputValue] = useState('');
+
+  // comment UI nickname comment
+
+  // comment
+  // 1. save inputValue O
+
+  // 2. comment inputvalue add
+
+  // 3. comment state => <div>~~~~</div>
 
   return (
     <div>
@@ -61,6 +74,7 @@ const MainHr = () => {
                             className="msg"
                             placeholder=" 댓글 달기..."
                             required
+                            value={inputValue} //공백
                             onChange={e => {
                               setInputValue(e.target.value);
                             }}
@@ -70,6 +84,7 @@ const MainHr = () => {
                               let copy = [...comment];
                               copy.push(inputValue);
                               setComment(copy);
+                              setInputValue(''); //공백
                             }}
                           >
                             게시
@@ -96,93 +111,26 @@ const MainHr = () => {
                       <span className="storyText">스토리</span>
                       <span className="moreText">모두 보기</span>
                     </div>
-                    <div className="storyBox">
-                      <div className="storyPic" />
-                      <div className="storyInfo">
-                        <div className="storyId">
-                          <b>westagram</b>
-                        </div>
-                        <div className="storyTime">16분 전</div>
-                      </div>
-                    </div>
-                    <div className="storyBox">
-                      <div className="storyPic" />
-                      <div className="storyInfo">
-                        <div className="storyId">
-                          <b>westagram</b>
-                        </div>
-                        <div className="storyTime">16분 전</div>
-                      </div>
-                    </div>
-                    <div className="storyBox">
-                      <div className="storyPic" />
-                      <div className="storyInfo">
-                        <div className="storyId">
-                          <b>westagram</b>
-                        </div>
-                        <div className="storyTime">16분 전</div>
-                      </div>
-                    </div>
-                    <div className="storyBox">
-                      <div className="storyPic" />
-                      <div className="storyInfo">
-                        <div className="storyId">
-                          <b>westagram</b>
-                        </div>
-                        <div className="storyTime">16분 전</div>
-                      </div>
-                    </div>
-                    <div className="storyBox">
-                      <div className="storyPic" />
-                      <div className="storyInfo">
-                        <div className="storyId">
-                          <b>westagram</b>
-                        </div>
-                        <div className="storyTime">16분 전</div>
-                      </div>
-                    </div>
+                    <StoryBox />
+                    <StoryBox />
+                    <StoryBox />
+                    <StoryBox />
+                    <StoryBox />
+                    <StoryBox />
+                    <StoryBox />
                   </div>
                   <div className="recommand">
                     <div className="topStory">
                       <span className="storyText">회원님을 위한 추천</span>
                       <span className="moreText">모두 보기</span>
                     </div>
-                    <div className="reBox">
-                      <div className="reIdBox">
-                        <div className="rePic" />
-                        <div className="reInfo">
-                          <div className="reId">
-                            <b>westagram</b>
-                          </div>
-                          <div className="reFriends">16분 전</div>
-                        </div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                    <div className="reBox">
-                      <div className="reIdBox">
-                        <div className="rePic" />
-                        <div className="reInfo">
-                          <div className="reId">
-                            <b>westagram</b>
-                          </div>
-                          <div className="reFriends">16분 전</div>
-                        </div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
-                    <div className="reBox">
-                      <div className="reIdBox">
-                        <div className="rePic" />
-                        <div className="reInfo">
-                          <div className="reId">
-                            <b>westagram</b>
-                          </div>
-                          <div className="reFriends">16분 전</div>
-                        </div>
-                      </div>
-                      <div className="follow">팔로우</div>
-                    </div>
+                    <ReBox />
+                    <ReBox />
+                    <ReBox />
+                    <ReBox />
+                    <ReBox />
+                    <ReBox />
+                    <ReBox />
                   </div>
                   <div className="instaInfo">
                     Instagram 정보 ・ 지원 ・ 홍보 센터 ・ API ・ <br />

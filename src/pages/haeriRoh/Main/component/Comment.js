@@ -4,7 +4,11 @@ const Comment = props => {
   return (
     <div>
       {props.comment2.map(function (a) {
-        return <li>{a}</li>;
+        return (
+          <div className="myComment">
+            <b>yesharryy</b> {a}
+          </div>
+        );
       })}
     </div>
   );
