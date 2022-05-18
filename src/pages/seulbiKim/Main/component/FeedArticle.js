@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import Comment from './Comment';
 
-const FeedArticle = ({
-  handleSubmit,
-  commentList,
-  handleComment,
-  feedData,
-  commentRemove,
-  liked,
-  clickedLike,
-}) => {
+const FeedArticle = ({ feedData, liked, clickedLike }) => {
+  const [comment, setComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (e.target.comment.value !== '')
+      setCommentList([
+        ...commentList,
+        { id: nextId.current, name: 'seul', comment: comment },
+      ]);
+    e.target.comment.value = '';
+    nextId.current += 1;
+  };
+
+  const handleComment = e => {
+    e.preventDefault();
+    setComment(e.target.value);
+  };
+
+  const commentRemove = e => {
+    const removeId = parseInt(e.target.id);
+    const filtered = commentList.filter(comment => comment.id !== removeId);
+    setCommentList(filtered);
+  };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/seulbiCommentData.json')
+      .then(res => res.json())
+      .then(data => setCommentList(data));
+  }, []);
+
+  const nextId = useRef(4);
+
   return (
     <article>
       {/*  article__header */}
