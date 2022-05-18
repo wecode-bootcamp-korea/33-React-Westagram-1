@@ -1,13 +1,18 @@
 import './LoginInput.scss';
 
-const LoginInput = ({ onChangeInput, type, placeholder }) => {
+const LoginInput = ({ onChangeInput, name, type, placeholder }) => {
   const InputHandler = event => {
-    const { value } = event.target;
-    onChangeInput(value);
+    const { name, value } = event.target;
+    onChangeInput(name, value);
   };
 
   return (
-    <input type={type} placeholder={placeholder} onChange={InputHandler} />
+    <input
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      onChange={InputHandler}
+    />
   );
 };
 

@@ -4,32 +4,63 @@ import LoginInput from './LoginInput';
 import './LoginHj.scss';
 
 function LoginHj() {
-  const [idInput, setIdInput] = useState('');
-  const [pwdInput, setPwdInput] = useState('');
+  const [input, setInput] = useState({
+    email: '',
+    password: '',
+  });
+
   const [isValidate, setIsValidate] = useState(false);
 
   const navigate = useNavigate();
 
-  const inputIdHandler = value => setIdInput(value);
-
-  const inputPwdHandler = value => setPwdInput(value);
-
-  useEffect(() => {
-    const timeid = setTimeout(() => {
-      checkValidate(idInput, pwdInput);
-    }, 300);
-    return () => {
-      clearTimeout(timeid);
-    };
-  }, [idInput, pwdInput]);
+  const inputHandler = (key, value) => {
+    setInput(prevState => {
+      return { ...prevState, [key]: value };
+    });
+  };
 
   const checkValidate = (id, pwd) => {
     const validation = id.indexOf('@') > -1 && pwd.trim().length >= 5;
     setIsValidate(validation);
   };
 
-  const goToMain = () => {
+  useEffect(() => {
+    const timeid = setTimeout(() => {
+      checkValidate(input.email, input.password);
+    }, 300);
+    return () => {
+      clearTimeout(timeid);
+    };
+  }, [input.email, input.password]);
+
+  // 로그인 구현
+  const login = () => {
     navigate('/main-hyeonjoo');
+    fetch('http://10.58.3.39:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify(input),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.TOKEN) {
+          localStorage.setItem('token', result.TOKEN);
+          navigate('/main-hyeonjoo');
+        }
+      });
+  };
+
+  // 회원가입 구현
+  const signUp = () => {
+    fetch('http://10.58.3.39:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify(input),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.MESSAGE === 'SUCCESS') {
+          alert('회원가입에 성공하셨습니다.');
+        }
+      });
   };
 
   return (
@@ -38,18 +69,21 @@ function LoginHj() {
         <p className="logo">Westagram</p>
         <LoginInput
           type="text"
-          name="id"
+          name="email"
           placeholder="전화번호, 사용자 이름 또는 이메일"
-          onChangeInput={inputIdHandler}
+          onChangeInput={inputHandler}
         />
         <LoginInput
           type="password"
-          name="pwd"
+          name="password"
           placeholder="비밀번호"
-          onChangeInput={inputPwdHandler}
+          onChangeInput={inputHandler}
         />
-        <button className="loginBtn" disabled={!isValidate} onClick={goToMain}>
+        <button className="loginBtn" disabled={!isValidate} onClick={login}>
           로그인
+        </button>
+        <button className="signUpBtn" disabled={!isValidate} onClick={signUp}>
+          회원가입
         </button>
       </section>
     </div>
