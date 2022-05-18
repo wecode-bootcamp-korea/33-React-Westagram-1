@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import FeedList from './FeedList';
 import InputComment from './InputComment';
+import './Feed.scss';
 
 const Feed = ({ name, src, text }) => {
   const [commentList, setCommentList] = useState([]); //리스트를 만들어야 함, 들어온 배열을 문자열로 받겠다.

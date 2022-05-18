@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import './Recommend.scss';
 const Recommend = () => {
   const [recommendList, setRecommendList] = useState([]);
 

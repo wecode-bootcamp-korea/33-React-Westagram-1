@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FeedComments.scss';
 
 const FeedComments = ({ comment, onRemove }) => {
   const { id, text, name } = comment;

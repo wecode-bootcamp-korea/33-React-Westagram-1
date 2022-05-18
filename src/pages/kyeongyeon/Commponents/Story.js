@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Story.scss';
 
 const Story = () => {
   const [storyList, setStoryList] = useState([]);

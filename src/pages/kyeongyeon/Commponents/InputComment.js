@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './InputComment.scss';
 
 const InputComment = ({ addComment }) => {
   const [value, setValue] = useState('');
@@ -24,8 +25,8 @@ const InputComment = ({ addComment }) => {
             value={value}
           />
           <button className="commentsBtn" type="submit">
-            {/*클릭을 하면 받은 값을 addComment에 저장해줄거임*/}
             게시
+            {/*클릭을 하면 받은 값을 addComment에 저장해줄거임*/}
           </button>
         </div>
       </div>

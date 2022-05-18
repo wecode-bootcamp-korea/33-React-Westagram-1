@@ -1,10 +1,11 @@
 import React from 'react';
 import Recommend from './Recommend';
 import Story from './Story';
+import './RightFeed.scss';
 
 const RightFeed = () => {
   return (
-    <aside className="mainRight">
+    <div className="mainRight">
       <div className="myStory">
         <div className="myIdImg">
           <img
@@ -39,7 +40,7 @@ const RightFeed = () => {
         </span>
         © 2019 INSTAGRAM
       </footer>
-    </aside>
+    </div>
   );
 };
 
