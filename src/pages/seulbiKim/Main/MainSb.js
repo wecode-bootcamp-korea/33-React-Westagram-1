@@ -7,11 +7,6 @@ import MainRight from './component/MainRight';
 
 const MainSb = () => {
   const [feedList, setFeedList] = useState([]);
-  const [liked, setLiked] = useState(false);
-
-  const clickedLike = () => {
-    setLiked(isLiked => !isLiked);
-  };
 
   useEffect(() => {
     fetch('http://localhost:3000/data/seulbiFeedData.json')
@@ -26,12 +21,7 @@ const MainSb = () => {
         <div className="mainContainer">
           <div className="feeds">
             {feedList.map(feedData => (
-              <FeedArticle
-                key={feedData.id}
-                feedData={feedData}
-                liked={liked}
-                clickedLike={clickedLike}
-              />
+              <FeedArticle key={feedData.id} feedData={feedData} />
             ))}
           </div>
           <MainRight />

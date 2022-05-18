@@ -2,9 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import Comment from './Comment';
 
-const FeedArticle = ({ feedData, liked, clickedLike }) => {
+const FeedArticle = ({ feedData }) => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
+  const [liked, setLiked] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,6 +27,9 @@ const FeedArticle = ({ feedData, liked, clickedLike }) => {
     const removeId = parseInt(e.target.id);
     const filtered = commentList.filter(comment => comment.id !== removeId);
     setCommentList(filtered);
+  };
+  const clickedLike = () => {
+    setLiked(isLiked => !isLiked);
   };
 
   useEffect(() => {

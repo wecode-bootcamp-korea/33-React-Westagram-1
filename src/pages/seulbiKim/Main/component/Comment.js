@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { CgRemove } from 'react-icons/cg';
 
 const Comment = ({ commentData, commentRemove }) => {
+  const [commentLiked, setCommentLiked] = useState(false);
+  const clickedLike = () => {
+    setCommentLiked(isLiked => !isLiked);
+  };
   return (
     <li>
       <div className="commentsCommented">
@@ -11,8 +15,18 @@ const Comment = ({ commentData, commentRemove }) => {
           {commentData.comment}
         </p>
       </div>
-      <AiOutlineHeart className="articleDataIconsHeart" />
-      <AiFillHeart className="articleDataIconsHeart fill" />
+      {commentLiked === false ? (
+        <AiOutlineHeart
+          className="articleDataIconsHeart"
+          onClick={clickedLike}
+        />
+      ) : (
+        <AiFillHeart
+          className="articleDataIconsHeart fill"
+          onClick={clickedLike}
+        />
+      )}
+
       <CgRemove
         className="articleDataIconsRemove"
         id={commentData.id}

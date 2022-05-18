@@ -40,12 +40,15 @@ const LoginSb = () => {
       .then(response => response.json())
       .then(result => {
         if (result.access_token) {
+          // localStorage에 token 저장
           localStorage.setItem('token', result.access_token);
           goToMain();
         }
       });
   };
-  let token = localStorage.getItem('token') || '';
+
+  // localStorage에서 token 가져오기
+  // let token = localStorage.getItem('token') || '';
 
   // 회원가입 통신
   // const signUpPost = e => {
