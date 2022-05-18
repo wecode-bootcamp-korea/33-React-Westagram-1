@@ -46,7 +46,6 @@ const LoginSb = () => {
       });
   };
   let token = localStorage.getItem('token') || '';
-  console.log(token);
 
   // 회원가입 통신
   // const signUpPost = e => {

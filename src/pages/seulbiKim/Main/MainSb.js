@@ -20,7 +20,6 @@ const MainSb = () => {
     e.target.comment.value = '';
     nextId.current += 1;
   };
-  console.log(commentArr);
 
   const handleComment = e => {
     e.preventDefault();
