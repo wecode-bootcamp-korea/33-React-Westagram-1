@@ -7,14 +7,14 @@ import MainRight from './component/MainRight';
 
 const MainSb = () => {
   const [comment, setComment] = useState('');
-  const [commentArr, setCommentArr] = useState([]);
+  const [commentList, setCommentList] = useState([]);
   const [feedList, setFeedList] = useState([]);
   const nextId = useRef(4);
   const handleSubmit = e => {
     e.preventDefault();
     if (e.target.comment.value !== '')
-      setCommentArr([
-        ...commentArr,
+      setCommentList([
+        ...commentList,
         { id: nextId.current, name: 'seul', comment: comment },
       ]);
     e.target.comment.value = '';
@@ -26,10 +26,16 @@ const MainSb = () => {
     setComment(e.target.value);
   };
 
+  const commentRemove = e => {
+    const removeId = parseInt(e.target.id);
+    const filtered = commentList.filter(comment => comment.id !== removeId);
+    setCommentList(filtered);
+  };
+
   useEffect(() => {
     fetch('http://localhost:3000/data/seulbiCommentData.json')
       .then(res => res.json())
-      .then(data => setCommentArr(data));
+      .then(data => setCommentList(data));
   }, []);
 
   useEffect(() => {
@@ -48,8 +54,9 @@ const MainSb = () => {
               <FeedArticle
                 feedData={feedData}
                 handleSubmit={handleSubmit}
-                commentArr={commentArr}
+                commentList={commentList}
                 handleComment={handleComment}
+                commentRemove={commentRemove}
                 key={feedData.id}
               />
             ))}

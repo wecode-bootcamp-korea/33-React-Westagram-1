@@ -2,7 +2,13 @@ import React from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import Comment from './Comment';
 
-const FeedArticle = ({ handleSubmit, commentArr, handleComment, feedData }) => {
+const FeedArticle = ({
+  handleSubmit,
+  commentList,
+  handleComment,
+  feedData,
+  commentRemove,
+}) => {
   return (
     <article>
       {/*  article__header */}
@@ -53,8 +59,12 @@ const FeedArticle = ({ handleSubmit, commentArr, handleComment, feedData }) => {
           {/*  article__comments */}
           <div className="reactionComments">
             <ul>
-              {commentArr.map(commentData => (
-                <Comment commentData={commentData} key={commentData.id} />
+              {commentList.map(commentData => (
+                <Comment
+                  commentData={commentData}
+                  key={commentData.id}
+                  commentRemove={commentRemove}
+                />
               ))}
             </ul>
             <div className="date">

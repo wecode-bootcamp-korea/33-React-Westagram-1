@@ -2,7 +2,7 @@ import React from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { CgRemove } from 'react-icons/cg';
 
-const Comment = ({ commentData }) => {
+const Comment = ({ commentData, commentRemove }) => {
   return (
     <li>
       <div className="commentsCommented">
@@ -13,7 +13,13 @@ const Comment = ({ commentData }) => {
       </div>
       <AiOutlineHeart className="articleDataIconsHeart" />
       <AiFillHeart className="articleDataIconsHeart fill" />
-      <CgRemove className="articleDataIconsRemove" />
+      <CgRemove
+        className="articleDataIconsRemove"
+        id={commentData.id}
+        onClick={e => {
+          commentRemove(e);
+        }}
+      />
     </li>
   );
 };
