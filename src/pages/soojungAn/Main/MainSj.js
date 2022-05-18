@@ -1,7 +1,6 @@
 import './MainSj.scss';
 import Nav from '../../../components/Nav/Nav';
 import { useState, useRef, useEffect } from 'react';
-import Comment from './Comment';
 import Feed from './Feed';
 
 function MainSj() {
@@ -9,7 +8,6 @@ function MainSj() {
   const [commentList, setCommentList] = useState([]);
   const [feedList, setFeedList] = useState([]);
   let index = useRef(0);
-  let feedIndex = useRef(0);
 
   const isValid = inputValue.length > 0;
 

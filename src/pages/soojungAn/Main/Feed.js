@@ -10,13 +10,13 @@ const Feed = ({
   inputValue,
   isValid,
 }) => {
-  const { id, nickname, content, img } = feed;
+  const { nickname, content, img } = feed;
 
   return (
     <article className="feedArticle">
       <header className="feedHeader">
         <div className="feedHeaderLeft">
-          <img src={'/images/soojungAn/' + img} alt="" />
+          <img src={'/images/soojungAn/' + img} alt="profileImg" />
           <span>{nickname}</span>
         </div>
         <div className="feedHeaderRight">
@@ -24,7 +24,7 @@ const Feed = ({
         </div>
       </header>
       <div className="feedContent">
-        <img src={'/images/soojungAn/' + img} />
+        <img src={'/images/soojungAn/' + img} alt="contentImg" />
       </div>
       <div className="feedBtnArea">
         <span>
