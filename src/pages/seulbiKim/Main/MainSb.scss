@@ -251,13 +251,15 @@ a {
     }
 
     /* comments date */
-    .reactionComments .date {
-      margin: 8px 0;
-      color: rgb(180, 180, 180);
-    }
+    .reactionComments {
+      .date {
+        margin: 8px 0;
+        color: rgb(180, 180, 180);
 
-    .reactionComments .date span {
-      font-size: 12px;
+        span {
+          font-size: 12px;
+        }
+      }
     }
 
     /* comments form */
@@ -298,8 +300,10 @@ a {
       cursor: pointer;
     }
 
-    .commentForm button.active {
-      color: rgb(30, 151, 226);
+    .commentForm button {
+      .active {
+        color: rgb(30, 151, 226);
+      }
     }
 
     /* main-right */
