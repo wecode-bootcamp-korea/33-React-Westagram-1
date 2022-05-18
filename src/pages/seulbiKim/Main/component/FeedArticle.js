@@ -8,6 +8,8 @@ const FeedArticle = ({
   handleComment,
   feedData,
   commentRemove,
+  liked,
+  clickedLike,
 }) => {
   return (
     <article>
@@ -35,8 +37,18 @@ const FeedArticle = ({
       <div className="articleData">
         <div className="articleDataIcons">
           <div className="articleDataIconsLeft">
-            <AiOutlineHeart className="articleDataIconHeart" />
-            <AiFillHeart className="articleDataIconHeart fill" />
+            {liked === false ? (
+              <AiOutlineHeart
+                className="articleDataIconHeart"
+                onClick={clickedLike}
+              />
+            ) : (
+              <AiFillHeart
+                className="articleDataIconHeart fill"
+                onClick={clickedLike}
+              />
+            )}
+
             <img alt="chat icon" src="/images/seulbiKim/chat.png" />
             <img alt="send icon" src="/images/seulbiKim/send.png" />
           </div>
@@ -61,8 +73,8 @@ const FeedArticle = ({
             <ul>
               {commentList.map(commentData => (
                 <Comment
-                  commentData={commentData}
                   key={commentData.id}
+                  commentData={commentData}
                   commentRemove={commentRemove}
                 />
               ))}

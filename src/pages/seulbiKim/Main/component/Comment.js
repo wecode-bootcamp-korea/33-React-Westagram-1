@@ -2,7 +2,7 @@ import React from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { CgRemove } from 'react-icons/cg';
 
-const Comment = ({ commentData, commentRemove }) => {
+const Comment = ({ commentData, commentRemove, liked }) => {
   return (
     <li>
       <div className="commentsCommented">

@@ -9,6 +9,7 @@ const MainSb = () => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
   const [feedList, setFeedList] = useState([]);
+  const [liked, setLiked] = useState(false);
   const nextId = useRef(4);
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,6 +33,11 @@ const MainSb = () => {
     setCommentList(filtered);
   };
 
+  const clickedLike = () => {
+    setLiked(isLiked => !isLiked);
+  };
+  // console.log(liked);
+
   useEffect(() => {
     fetch('http://localhost:3000/data/seulbiCommentData.json')
       .then(res => res.json())
@@ -52,12 +58,14 @@ const MainSb = () => {
           <div className="feeds">
             {feedList.map(feedData => (
               <FeedArticle
+                key={feedData.id}
                 feedData={feedData}
                 handleSubmit={handleSubmit}
                 commentList={commentList}
                 handleComment={handleComment}
                 commentRemove={commentRemove}
-                key={feedData.id}
+                liked={liked}
+                clickedLike={clickedLike}
               />
             ))}
           </div>
