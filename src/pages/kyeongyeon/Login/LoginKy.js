@@ -5,12 +5,37 @@ import './LoginKy.scss';
 const LoginKy = () => {
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    navigate('/main-kyeongyeon');
-  };
-
   const [inputId, setInputId] = useState(''); //useState를 사용해서 변하는 값을 set함수로 받음
   const [inputPw, setInputPw] = useState('');
+
+  const goToMain = e => {
+    navigate('/main-kyeongyeon');
+    fetch('http://10.58.3.119:8000/users/signin', {
+      method: 'post',
+      body: JSON.stringify({
+        email: inputId,
+        password: inputPw,
+      }),
+    }) //덩어리 제이슨을 받아옴
+      .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
+      .then(data => console.log(data));
+    e.preventDefault();
+  };
+
+  /* useEffect(() => {
+    fetch('http://10.58.3.119:8000/users/signin', {
+      method: 'post',
+      body: JSON.stringify({
+        name: 'yeri',
+        batch: 1,
+      }),
+    }) //덩어리 제이슨을 받아옴
+      .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
+      .then(data => {
+       
+        goToMain(data);
+      }); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
+  }, []); */
 
   const handleInputId = e => {
     // input data에 변화가 있을때마다 value값을 변경해서 useState해줌
