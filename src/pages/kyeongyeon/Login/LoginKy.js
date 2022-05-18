@@ -18,10 +18,13 @@ const LoginKy = () => {
       }),
     }) //덩어리 제이슨을 받아옴
       .then(res => res.json()) //덩어리 제이슨을 객체 현태로 변환
-      .then(data => console.log(data));
+      .then(data => localStorage.setItem('token', data.ACCESS_TOKEN));
     e.preventDefault();
   };
 
+  /*   const userToken = localStorage.getItem('token');
+  console.log(userToken);
+ */
   /* useEffect(() => {
     fetch('http://10.58.3.119:8000/users/signin', {
       method: 'post',
