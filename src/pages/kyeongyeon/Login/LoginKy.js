@@ -58,6 +58,17 @@ const LoginKy = () => {
               >
                 로그인
               </button>
+              <div className="signUpLogin">
+                <button
+                  type="button"
+                  id="activeButton"
+                  /*  disabled={
+                  inputId.includes('@') && inputPw.length > 4 ? false : true
+                } */
+                >
+                  회원가입
+                </button>
+              </div>
               {/* <button onClick={goToMain}>메인페이지로 이동하기</button> */}
             </div>
 
