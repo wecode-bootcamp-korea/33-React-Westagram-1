@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "nickname": "Hello World",
+    "content": "나비가 내 코에 앉았어오",
+    "img": "karina-vorozheeva-rW-I87aPY5Y-unsplash.jpg"
+  },
+
+  {
+    "id": 2,
+    "nickname": "Samsek's",
+    "content": "삼색이는 삼색삼색",
+    "img": "cat2.jpg"
+  },
+  {
+    "id": 3,
+    "nickname": "Miya",
+    "content": "냥냥",
+    "img": "cat3.jpg"
+  }
+]

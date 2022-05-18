@@ -2,11 +2,14 @@ import './MainSj.scss';
 import Nav from '../../../components/Nav/Nav';
 import { useState, useRef, useEffect } from 'react';
 import Comment from './Comment';
+import Feed from './Feed';
 
 function MainSj() {
   const [inputValue, setInputValue] = useState('');
   const [commentList, setCommentList] = useState([]);
+  const [feedList, setFeedList] = useState([]);
   let index = useRef(0);
+  let feedIndex = useRef(0);
 
   const isValid = inputValue.length > 0;
 
@@ -58,6 +61,14 @@ function MainSj() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch('/data/soojungAnFeed.json')
+      .then(res => res.json())
+      .then(data => {
+        setFeedList(data);
+      });
+  }, []);
+
   return (
     <div className="main">
       <Nav />
@@ -73,83 +84,21 @@ function MainSj() {
             <div className="storyContainer" />
           </div>
           <div className="feeds">
-            <article className="feedArticle">
-              <header className="feedHeader">
-                <div className="feedHeaderLeft">
-                  <img
-                    src="/images/soojungAn/karina-vorozheeva-rW-I87aPY5Y-unsplash.jpg"
-                    alt=""
-                  />
-                  <span>Hello_World</span>
-                </div>
-                <div className="feedHeaderRight">
-                  <i className="fa-solid fa-ellipsis" />
-                </div>
-              </header>
-              <div className="feedContent">
-                <img
-                  src="/images/soojungAn/karina-vorozheeva-rW-I87aPY5Y-unsplash.jpg"
-                  alt=""
+            {feedList.map(feed => {
+              return (
+                <Feed
+                  key={feed.id}
+                  feed={feed}
+                  commentList={commentList}
+                  remove={remove}
+                  clickHeart={clickHeart}
+                  pushToList={pushToList}
+                  handleInput={handleInput}
+                  inputValue={inputValue}
+                  isValid={isValid}
                 />
-              </div>
-              <div className="feedBtnArea">
-                <span>
-                  <i className="fa-regular fa-heart" />
-                  <i className="fa-regular fa-comment" />
-                  <i className="fa-regular fa-paper-plane" />
-                </span>
-                <span>
-                  <i className="fa-regular fa-bookmark" />
-                </span>
-              </div>
-              <div className="heartNumber">좋아요 2150개</div>
-              <div className="letterCommentArea">
-                <div className="postingLetter">
-                  <a href="/">Hello_World</a>
-                  <span>나비가 내 코에 앉았어오</span>
-                </div>
-                <div className="commentShow">댓글 5개 모두보기</div>
-                <div className="commentContainer">
-                  {commentList.map(user => {
-                    return (
-                      <Comment
-                        key={user.id}
-                        user={user}
-                        remove={remove}
-                        clickHeart={clickHeart}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-              <div className="dateBefore">1일전</div>
-              <footer className="footer">
-                <form
-                  className="postingCommentArea"
-                  onSubmit={e => {
-                    pushToList(e);
-                  }}
-                >
-                  <i className="fa-regular fa-face-grin" />
-                  <input
-                    className="postingInput"
-                    type="text"
-                    placeholder="댓글달기..."
-                    onChange={handleInput}
-                    value={inputValue}
-                  />
-                  <button
-                    type="submit"
-                    disabled={!isValid}
-                    className={
-                      'postingBtn ' + (isValid ? 'buttonActivate' : '')
-                    }
-                  >
-                    게시
-                  </button>
-                </form>
-              </footer>
-            </article>
+              );
+            })}
           </div>
         </div>
         <div className="mainRight">

@@ -87,6 +87,7 @@
       .feeds {
         .feedArticle {
           width: 100%;
+          margin-bottom: 30px;
           border: 1px solid lightgray;
           border-radius: 3px;
 
@@ -208,7 +209,7 @@
                     }
                   }
                   .commentHeart:hover {
-                    color: pink;
+                    color: rgb(235, 14, 51);
                     cursor: pointer;
                   }
                 }
@@ -338,7 +339,7 @@
   // }
 
   .heartBtnColor {
-    color: pink;
+    color: rgb(235, 14, 51);
   }
 
   @media screen and (max-width: 768px) {

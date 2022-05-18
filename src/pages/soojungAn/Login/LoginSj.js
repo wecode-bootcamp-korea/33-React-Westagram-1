@@ -26,6 +26,26 @@ function LoginSj() {
 
   const valid = id.includes('@') && pw.length >= 5;
 
+  // const signUp = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.4.225:8000/login', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: id,
+  //       password: pw,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data.access_token) {
+  //         localStorage.setItem('token', data.access_token);
+  //       }
+  //     });
+  // };
+
+  // const token = localStorage.getItem('token');
+  // console.log(token);
+
   return (
     <div className="login">
       <div className="loginContainer">
@@ -52,6 +72,9 @@ function LoginSj() {
             className={'loginBtn ' + (valid ? 'btnActive' : '')}
             disabled={!valid}
             onClick={goToMain}
+            // onClick={e => {
+            //   signUp(e);
+            // }}
           >
             로그인
           </button>
