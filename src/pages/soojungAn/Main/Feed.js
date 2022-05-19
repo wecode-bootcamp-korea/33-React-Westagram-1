@@ -37,7 +37,8 @@ const Feed = ({ feed }) => {
   };
 
   const remove = e => {
-    setCommentList(commentList.filter(item => item.id != e.target.id));
+    let clickedId = parseInt(e.target.id);
+    setCommentList(commentList.filter(item => item.id !== clickedId));
   };
 
   const clickHeart = e => {

@@ -13,7 +13,9 @@ const Comment = ({ user, remove, clickHeart }) => {
         <i
           className="fa-solid fa-trash commentDelete"
           id={id}
-          onClick={remove}
+          onClick={e => {
+            remove(e);
+          }}
         />
         <i
           className={
@@ -21,7 +23,9 @@ const Comment = ({ user, remove, clickHeart }) => {
             (isLiked ? 'heartBtnColor' : '')
           }
           id={id}
-          onClick={clickHeart}
+          onClick={e => {
+            clickHeart(e);
+          }}
         />
       </div>
     </div>
