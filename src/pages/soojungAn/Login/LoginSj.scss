@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/common.scss';
 
-.login {
-  width: 100vw;
+.loginSj {
+  @include flex-center;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .loginContainer {
     position: relative;
-    width: 540px;
-    height: 540px;
-    padding: 20px;
+    padding: 40px 80px;
     border: 2px solid rgb(228, 227, 227);
     border-radius: 3px;
 
@@ -34,13 +30,31 @@
         margin-bottom: 10px;
         border: 1px solid lightgray;
         border-radius: 5px;
-        outline: none;
-        font-size: 17px;
         background-color: rgb(252, 252, 252);
+        font-size: 17px;
 
         &::placeholder {
           font-size: 15px;
         }
+      }
+
+      .loginBtn {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 130px;
+        padding: 13px;
+        background-color: rgba(var(--d69, 0, 149, 246), 1);
+        border-radius: 5px;
+        border: none;
+        opacity: 0.3;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .btnActive {
+        opacity: 1;
+        cursor: pointer;
       }
     }
 
@@ -51,27 +65,9 @@
       transform: translateX(-50%);
 
       a {
-        text-decoration: none;
         color: rgb(27, 53, 113);
+        text-decoration: none;
       }
     }
-  }
-
-  .loginBtn {
-    width: 100%;
-    padding: 13px;
-    background-color: rgba(var(--d69, 0, 149, 246), 1);
-    opacity: 0.3;
-    color: white;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 5px;
-    border: none;
-    margin-top: 10px;
-  }
-
-  .btnActive {
-    opacity: 1;
-    cursor: pointer;
   }
 }

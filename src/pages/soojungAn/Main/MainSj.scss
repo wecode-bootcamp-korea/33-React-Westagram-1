@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .main {
   padding-top: 60px;
 
@@ -11,21 +17,20 @@
   }
 
   .feedsRightContainer {
+    display: flex;
+    justify-content: space-between;
     width: 76%;
     max-width: 935px;
     min-width: 600px;
     margin: 30px auto 0 auto;
-    display: flex;
-    justify-content: space-between;
 
     .storyFeeds {
       width: 63%;
 
       .storyArea {
-        width: 100%;
+        position: relative;
         padding: 16px 0px 16px 10px;
         margin-bottom: 30px;
-        position: relative;
         border: 1px solid lightgray;
         border-radius: 3px;
         overflow: hidden;
@@ -35,38 +40,45 @@
         }
 
         .beforeBtn {
-          width: 45px;
-          height: 45px;
           position: absolute;
           top: 50%;
-          transform: translateY(-50%);
           display: none;
+          width: 45px;
+          height: 45px;
+          transform: translateY(-50%);
           color: white;
           z-index: 3;
           cursor: pointer;
         }
 
         .nextBtn {
-          width: 45px;
-          height: 45px;
           position: absolute;
           right: 0;
           top: 50%;
+          width: 45px;
+          height: 45px;
           transform: translate(-11px, -50%);
           color: white;
           z-index: 2;
           cursor: pointer;
         }
 
+        .hidden {
+          display: none;
+        }
+
+        .show {
+          display: block;
+        }
+
         .storyContainer {
           display: flex;
-          width: 613px;
           transition: transform 0.8s;
           font-size: 12px;
 
           .storyItem {
             width: 66px;
-            margin: 0 7px;
+            margin: 0 8px;
 
             img {
               width: 100%;
@@ -86,22 +98,19 @@
 
       .feeds {
         .feedArticle {
-          width: 100%;
           margin-bottom: 30px;
           border: 1px solid lightgray;
           border-radius: 3px;
 
           .feedHeader {
+            @include flexBetween;
             height: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
 
             .feedHeaderLeft {
-              width: 90%;
-              height: 100%;
               display: flex;
               align-items: center;
+              width: 90%;
+              height: 100%;
               padding: 14px 4px 14px 16px;
 
               img {
@@ -125,7 +134,7 @@
 
           .feedContent {
             width: 100%;
-            height: 640px;
+            height: 620px;
 
             img {
               width: 100%;
@@ -134,15 +143,16 @@
           }
 
           .feedBtnArea {
-            margin-top: 4px;
-            padding: 6px 8px 8px 8px;
             display: flex;
             justify-content: space-between;
+            margin-top: 4px;
+            padding: 6px 8px 8px 8px;
 
             i {
               padding: 8px;
               font-size: 24px;
               cursor: pointer;
+
               &:hover {
                 opacity: 0.5;
               }
@@ -183,10 +193,9 @@
               font-size: 14px;
 
               .commentLetter {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flexBetween;
                 margin-bottom: 4px;
+
                 .commentLetterLeft {
                   .commentNickname {
                     margin-right: 5px;
@@ -202,7 +211,6 @@
                     margin-left: 10px;
                   }
                   .commentDelete {
-                    // margin-left: 10px;
                     &:hover {
                       color: rgb(255, 0, 0, 0.7);
                       cursor: pointer;
@@ -218,40 +226,41 @@
           }
 
           .dateBefore {
+            display: inline-block;
             padding-left: 16px;
             margin-bottom: 16px;
-            font-size: 11px;
             color: rgb(146, 146, 146);
+            font-size: 11px;
             cursor: pointer;
-            display: inline-block;
           }
 
           .footer {
-            border-top: 1px solid lightgrey;
             padding: 6px 16px;
+            border-top: 1px solid lightgrey;
 
             .postingCommentArea {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
+              @include flexBetween;
 
               i {
                 flex: 0;
-                font-size: 24px;
                 padding: 8px 16px 8px 0;
+                font-size: 24px;
               }
+
               .postingInput {
                 flex: 7;
                 border: none;
                 background: none;
               }
+
               .postingBtn {
                 flex: 1;
                 background: none;
-                font-size: 15px;
                 color: rgba(var(--d69, 0, 149, 246), 1);
+                font-size: 15px;
                 opacity: 0.5;
               }
+
               .buttonActivate {
                 opacity: 1;
                 cursor: pointer;
@@ -268,9 +277,9 @@
       height: 300px;
 
       .rightProfile {
-        width: 100%;
         display: flex;
         align-items: center;
+        width: 100%;
         margin-bottom: 10px;
 
         img {
@@ -285,10 +294,10 @@
           display: flex;
           justify-content: space-between;
           margin-top: 12px;
+          padding: 4px 16px;
+          color: rgb(142, 142, 142);
           font-size: 14px;
           font-weight: 600;
-          color: rgb(142, 142, 142);
-          padding: 4px 16px;
 
           a {
             color: black;
@@ -300,10 +309,8 @@
           padding: 8px 0;
 
           .recommendListItem {
+            @include flexBetween;
             padding: 8px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
 
             .listProfile {
               display: flex;
@@ -316,14 +323,14 @@
                 border-radius: 50%;
               }
               span:hover {
-                cursor: pointer;
                 text-decoration: underline;
+                cursor: pointer;
               }
             }
 
             .follow {
-              font-size: 12px;
               color: rgba(var(--d69, 0, 149, 246), 1);
+              font-size: 12px;
               font-weight: 600;
               cursor: pointer;
             }
@@ -333,13 +340,16 @@
     }
   }
 
-  // .buttonActivate {
-  //   opacity: 1;
-  //   cursor: pointer;
-  // }
-
   .heartBtnColor {
     color: rgb(235, 14, 51);
+  }
+
+  .moveRight {
+    transform: translateX(-255px);
+  }
+
+  .moveLeft {
+    transform: translateX(0px);
   }
 
   @media screen and (max-width: 768px) {

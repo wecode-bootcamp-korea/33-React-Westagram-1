@@ -1,16 +1,57 @@
 import Comment from './Comment';
+import { useRef, useState, useEffect } from 'react';
 
-const Feed = ({
-  feed,
-  commentList,
-  remove,
-  clickHeart,
-  pushToList,
-  handleInput,
-  inputValue,
-  isValid,
-}) => {
+const Feed = ({ feed }) => {
+  const [inputValue, setInputValue] = useState('');
+  const [commentList, setCommentList] = useState([]);
   const { nickname, content, img } = feed;
+  let index = useRef(0);
+
+  useEffect(() => {
+    fetch('/data/soojungAn.json')
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+        index.current = data.length + 1;
+      });
+  }, []);
+
+  const isValid = inputValue.length > 0;
+
+  const handleInput = e => {
+    setInputValue(e.target.value);
+  };
+
+  const pushToList = e => {
+    e.preventDefault();
+    const comment = {
+      id: index.current++,
+      nickname: 'Nabi',
+      comment: inputValue,
+      isLiked: false,
+    };
+    setCommentList(prev => {
+      return [...prev, comment];
+    });
+    setInputValue('');
+  };
+
+  const remove = e => {
+    setCommentList(commentList.filter(item => item.id != e.target.id));
+  };
+
+  const clickHeart = e => {
+    let clickedId = parseInt(e.target.id);
+    let clickedIndex = 0;
+    commentList.forEach((item, index) => {
+      if (item.id === clickedId) {
+        clickedIndex = index;
+      }
+    });
+    let copy = [...commentList];
+    copy[clickedIndex].isLiked = !copy[clickedIndex].isLiked;
+    setCommentList(copy);
+  };
 
   return (
     <article className="feedArticle">

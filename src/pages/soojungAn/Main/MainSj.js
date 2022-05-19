@@ -1,63 +1,13 @@
-import './MainSj.scss';
+import { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
-import { useState, useRef, useEffect } from 'react';
 import Feed from './Feed';
+import STORY from './story';
+import FOLLOW_LIST from './followList';
+import './MainSj.scss';
 
 function MainSj() {
-  const [inputValue, setInputValue] = useState('');
-  const [commentList, setCommentList] = useState([]);
   const [feedList, setFeedList] = useState([]);
-  let index = useRef(0);
-
-  const isValid = inputValue.length > 0;
-
-  const handleInput = e => {
-    setInputValue(e.target.value);
-  };
-
-  const pushToList = e => {
-    e.preventDefault();
-    const comment = {
-      id: index.current++,
-      nickname: 'Nabi',
-      comment: inputValue,
-      isLiked: false,
-    };
-    let copy = [...commentList];
-    copy.push(comment);
-    setCommentList(copy);
-    setInputValue('');
-  };
-
-  const remove = e => {
-    let clickedId = parseInt(e.target.id);
-    let filter = commentList.filter(item => {
-      return item.id !== clickedId;
-    });
-    setCommentList(filter);
-  };
-
-  const clickHeart = e => {
-    let clickedId = parseInt(e.target.id);
-    let clickedIndex = 0;
-    commentList.forEach((item, index) => {
-      if (item.id === clickedId) {
-        clickedIndex = index;
-      }
-    });
-    let copy = [...commentList];
-    copy[clickedIndex].isLiked = !copy[clickedIndex].isLiked;
-    setCommentList(copy);
-  };
-
-  useEffect(() => {
-    fetch('/data/soojungAn.json')
-      .then(res => res.json())
-      .then(data => {
-        setCommentList(data);
-        index.current = data.length + 1;
-      });
-  }, []);
+  const [storyMove, setStoryMove] = useState(false);
 
   useEffect(() => {
     fetch('/data/soojungAnFeed.json')
@@ -73,29 +23,43 @@ function MainSj() {
       <main className="feedsRightContainer">
         <div className="storyFeeds">
           <div className="storyArea">
-            <button className="beforeBtn">
+            <button
+              className={'beforeBtn ' + (storyMove ? 'show' : 'hidden')}
+              onClick={() => {
+                setStoryMove(false);
+              }}
+            >
               <i className="fa-solid fa-circle-chevron-left" />
             </button>
-            <button className="nextBtn">
+            <button
+              className={'nextBtn ' + (storyMove ? 'hidden' : 'show')}
+              onClick={() => {
+                setStoryMove(true);
+              }}
+            >
               <i className="fa-solid fa-circle-chevron-right" />
             </button>
-            <div className="storyContainer" />
+            <div
+              className={
+                'storyContainer ' + (storyMove ? 'moveRight' : 'moveLeft')
+              }
+            >
+              {STORY.map(eachStory => {
+                return (
+                  <div className="storyItem" key={eachStory.id}>
+                    <img
+                      src={'/images/soojungAn/' + eachStory.imageName + '.jpg'}
+                      alt="storyImg"
+                    />
+                    <div>{eachStory.nickName}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="feeds">
             {feedList.map(feed => {
-              return (
-                <Feed
-                  key={feed.id}
-                  feed={feed}
-                  commentList={commentList}
-                  remove={remove}
-                  clickHeart={clickHeart}
-                  pushToList={pushToList}
-                  handleInput={handleInput}
-                  inputValue={inputValue}
-                  isValid={isValid}
-                />
-              );
+              return <Feed key={feed.id} feed={feed} />;
             })}
           </div>
         </div>
@@ -113,41 +77,20 @@ function MainSj() {
               <a href="/">모두보기</a>
             </div>
             <div className="recommendList">
-              <div className="recommendListItem">
-                <div className="listProfile">
-                  <img src="/images/soojungAn/cat0.jpg" alt="" />
-                  <span>I'm_sham</span>
-                </div>
-                <span className="follow">팔로우</span>
-              </div>
-              <div className="recommendListItem">
-                <div className="listProfile">
-                  <img src="/images/soojungAn/cat1.jpg" alt="" />
-                  <span>good_day</span>
-                </div>
-                <span className="follow">팔로우</span>
-              </div>
-              <div className="recommendListItem">
-                <div className="listProfile">
-                  <img src="/images/soojungAn/cat2.jpg" alt="" />
-                  <span>Samsek's_day</span>
-                </div>
-                <span className="follow">팔로우</span>
-              </div>
-              <div className="recommendListItem">
-                <div className="listProfile">
-                  <img src="/images/soojungAn/cat3.jpg" alt="" />
-                  <span>Cat_lover</span>
-                </div>
-                <span className="follow">팔로우</span>
-              </div>
-              <div className="recommendListItem">
-                <div className="listProfile">
-                  <img src="/images/soojungAn/cat4.jpg" alt="" />
-                  <span>I_love_cats</span>
-                </div>
-                <span className="follow">팔로우</span>
-              </div>
+              {FOLLOW_LIST.map(eachList => {
+                return (
+                  <div className="recommendListItem" key={eachList.id}>
+                    <div className="listProfile">
+                      <img
+                        src={'/images/soojungAn/' + eachList.img}
+                        alt="listImg"
+                      />
+                      <span>{eachList.nickname}</span>
+                    </div>
+                    <span className="follow">팔로우</span>
+                  </div>
+                );
+              })}
             </div>
           </section>
         </div>
