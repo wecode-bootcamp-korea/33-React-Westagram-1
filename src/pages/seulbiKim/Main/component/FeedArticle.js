@@ -37,7 +37,7 @@ const FeedArticle = ({ feedData }) => {
     fetch(`http://localhost:3000/data/seulbiCommentData${feedData.id}.json`)
       .then(res => res.json())
       .then(data => setCommentList(data));
-  }, []);
+  }, [feedData.id]);
 
   const nextId = useRef(4);
 

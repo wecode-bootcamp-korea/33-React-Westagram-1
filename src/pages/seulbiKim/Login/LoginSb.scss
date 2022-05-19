@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/common.scss';
 
-.loginPage {
+$white-color: rgb(250, 250, 250);
+$gray1-color: rgb(219, 219, 219);
+
+.loginSb {
   .login {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 
     .loginContainer {
-      display: flex;
+      @include flex-center;
       flex-direction: column;
-      align-items: center;
-      width: 348px;
-      height: 374px;
       padding: 10px 0;
-      border: 1px solid rgb(219, 219, 219);
-      background-color: white;
+      border: 1px solid $gray1-color;
+      background-color: $white-color;
     }
 
     .loginLogo {
-      margin: 25px 0 30px 0;
+      margin: 25px 80px 30px 80px;
       font-family: 'Lobster', cursive;
       font-size: 40px;
       font-weight: 500;
@@ -33,7 +34,7 @@
 
     input,
     textarea {
-      background-color: rgb(250, 250, 250);
+      background-color: $white-color;
     }
 
     .loginInputId,
@@ -42,7 +43,7 @@
       height: 20px;
       margin: 3px 0;
       padding: 18px 10px;
-      border: 1px solid rgb(219, 219, 219);
+      border: 1px solid $gray1-color;
       border-radius: 3px;
 
       &:focus {
@@ -60,7 +61,7 @@
       font-weight: 600;
       border: none;
       border-radius: 3px;
-      color: white;
+      color: $white-color;
       background-color: rgb(197, 229, 255);
       cursor: pointer;
 
@@ -70,7 +71,7 @@
     }
 
     .message {
-      margin-top: 90px;
+      margin: 90px 0 20px 0;
       font-size: 14px;
 
       .text {

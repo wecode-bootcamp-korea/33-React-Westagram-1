@@ -13,7 +13,7 @@ const LoginSb = () => {
     pw: '',
   });
   const { id, pw } = input;
-  const isInputValid = id.includes('@') && pw.length >= 5 ? false : true;
+  const isInputValid = id.includes('@') && pw.length >= 5;
 
   const onChangeInput = e => {
     e.preventDefault();
@@ -68,7 +68,7 @@ const LoginSb = () => {
   // };
 
   return (
-    <div className="loginPage">
+    <div className="loginSb">
       <div className="login">
         <main className="loginContainer">
           <h1 className="loginLogo">westagram</h1>
@@ -93,7 +93,7 @@ const LoginSb = () => {
               // onClick={goToMain}
               onClick={loginPost}
               // onClick={signUpPost}
-              disabled={isInputValid}
+              disabled={!isInputValid}
             >
               로그인
             </button>

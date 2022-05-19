@@ -8,13 +8,13 @@ import MainRight from './component/MainRight';
 const MainSb = () => {
   const [feedList, setFeedList] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/data/seulbiFeedData.json')
+    fetch('data/seulbiFeedData.json')
       .then(res => res.json())
       .then(data => setFeedList(data));
   }, []);
 
   return (
-    <div className="mainPage">
+    <div className="mainSb">
       <Nav />
       <main>
         <div className="mainContainer">

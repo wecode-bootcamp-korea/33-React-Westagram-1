@@ -30,9 +30,7 @@ const Comment = ({ commentData, commentRemove }) => {
       <CgRemove
         className="articleDataIconsRemove"
         id={commentData.id}
-        onClick={e => {
-          commentRemove(e);
-        }}
+        onClick={commentRemove}
       />
     </li>
   );
