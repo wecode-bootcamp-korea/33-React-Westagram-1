@@ -6,18 +6,19 @@
   border: 1px solid #e6e6e6;
   overflow-y: scroll;
   margin-bottom: 20px;
+
+  .boxRecommenedText {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+
+    .boxRecommenedText span {
+      font-size: 15px;
+    }
+  }
 }
 
-.boxRecommenedText {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-}
-
-.boxRecommenedText span {
-  font-size: 15px;
-}
 .boxRecommenedText span:first-child {
   padding-left: 20px;
   background-color: white;

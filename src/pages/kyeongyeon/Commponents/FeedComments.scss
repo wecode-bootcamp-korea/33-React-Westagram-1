@@ -3,39 +3,41 @@
   align-items: center;
   background-color: white;
   margin: 5px;
-}
 
-.flexNameTextIcon {
-  background-color: white;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
+  .flexNameTextIcon {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-.flexNameTextContainer {
-  display: flex;
-}
+    .flexNameTextContainer {
+      display: flex;
 
-.commentName {
-  width: 80px;
-  padding-left: 15px;
-  font-weight: bold;
-  background-color: white;
-}
-.commentText {
-  background-color: white;
-}
-.heartDeleteIcon {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  width: 30px;
-  margin-right: 20px;
-}
-.feedCommentHeart {
-  background-color: white;
-}
-.deleteImg {
-  background-color: white;
+      .commentName {
+        width: 80px;
+        padding-left: 15px;
+        font-weight: bold;
+        background-color: white;
+      }
+      .commentText {
+        background-color: white;
+      }
+    }
+  }
+  .heartDeleteIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 30px;
+    margin-right: 20px;
+
+    .feedCommentHeart {
+      background-color: white;
+
+      .deleteImg {
+        background-color: white;
+      }
+    }
+  }
 }

@@ -22,14 +22,9 @@ const RightFeed = () => {
         </div>
       </div>
       <Story />
-      <div className="boxRecommend">
-        <div className="boxRecommenedText">
-          <span className="littleFont">회원님을 위한 추천</span>
-          <span className="boldFont">모두보기</span>
-        </div>
-        <div className="recommendPeople" />
-        <Recommend />
-      </div>
+
+      <Recommend />
+
       <footer>
         <span>
           Instagram 정보 ∙ 지원 ∙ 홍보 센터 ∙ API ∙<br />

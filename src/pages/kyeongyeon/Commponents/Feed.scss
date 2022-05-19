@@ -2,42 +2,43 @@
   margin: 100px auto;
   border: 1px solid #e6e6e6;
   top: 0;
-}
 
-.feed {
-  width: 614px;
-  height: auto;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
+  .feed {
+    width: 614px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-article {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
+    article {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+
+      .neighborhoodProfile {
+        width: 614px;
+        height: 70px;
+        background-color: white;
+        border-bottom: 1px solid #e6e6e6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        .neighborhoodProfile span {
+          background-color: white;
+        }
+      }
+    }
+  }
 }
 
 .feedImg {
   vertical-align: bottom;
 }
 /*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/
-.neighborhoodProfile {
-  width: 614px;
-  height: 70px;
-  background-color: white;
-  border-bottom: 1px solid #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-}
-
-.neighborhoodProfile span {
-  background-color: white;
-}
 
 .nProfileLeft {
   display: flex;
