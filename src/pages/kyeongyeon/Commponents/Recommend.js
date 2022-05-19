@@ -27,8 +27,6 @@ const Recommend = () => {
                   className="recommendNeighbor"
                   src={src}
                   alt="추천이웃 프로필 이미지"
-                  width="20px"
-                  height="20px"
                 />
                 <span className="neighborId">{name}</span>
                 <span className="blueFont">팔로우</span>

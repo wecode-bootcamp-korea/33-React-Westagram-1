@@ -12,8 +12,6 @@ const RightFeed = () => {
             className="myProfile"
             src="/images/kyeongyeon/meme.png"
             alt="내프로필"
-            width="40px"
-            height="40px"
           />
           <div className="setProfile">
             <p>yeoo_on</p>

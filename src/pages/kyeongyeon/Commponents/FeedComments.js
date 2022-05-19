@@ -6,7 +6,6 @@ const FeedComments = ({ comment, onRemove }) => {
 
   const [likedHeart, setLikedHeart] = useState(false);
   const changeColor = e => {
-    e.preventDefault(); //새로고침
     e.target.src = likedHeart
       ? 'images/kyeongyeon/emptyheart.png'
       : 'images/kyeongyeon/heart123.png';
@@ -26,7 +25,6 @@ const FeedComments = ({ comment, onRemove }) => {
             src="/images/kyeongyeon/emptyheart.png"
             alt="heart"
             onClick={changeColor}
-            width="15px"
           />
           <i
             className="fa-solid fa-xmark"

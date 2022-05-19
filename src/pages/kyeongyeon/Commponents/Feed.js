@@ -37,8 +37,8 @@ const Feed = ({ name, src, text }) => {
   };
 
   const [likedHeart, setLikedHeart] = useState(false);
+
   const changeColor = e => {
-    e.preventDefault(); //새로고침
     e.target.src = likedHeart
       ? 'images/kyeongyeon/emptyheart.png'
       : 'images/kyeongyeon/heart123.png';
@@ -62,7 +62,7 @@ const Feed = ({ name, src, text }) => {
               <span className="neighborDots">•••</span>
             </div>
           </div>
-          <img className="feedImg" src={src} alt="feed_img" width="614px" />
+          <img className="feedImg" src={src} alt="feed_img" />
           <div className="checkImg">
             <div className="checkImgLeft">
               <img

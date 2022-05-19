@@ -5,8 +5,18 @@ import './LoginKy.scss';
 const LoginKy = () => {
   const navigate = useNavigate();
 
-  const [inputId, setInputId] = useState(''); //useState를 사용해서 변하는 값을 set함수로 받음
-  const [inputPw, setInputPw] = useState('');
+  const [userInfo, setUserInfo] = useState({
+    id: '',
+    pw: '',
+  });
+
+  const { id, pw } = userInfo;
+
+  const handleUserInfo = e => {
+    const { name, value } = e.target;
+    setUserInfo({ ...userInfo, [name]: value });
+  };
+
   /*   const [inputPhone, setInputPhone] = useState(''); //회원가입
   const [inputName, setInputName] = useState(''); */
 
@@ -37,6 +47,8 @@ const LoginKy = () => {
     e.preventDefault();
   };
 
+  const validation = id.includes('@') && pw.length > 4;
+
   /*   const userToken = localStorage.getItem('token'); //토큰값 가져옴
   console.log(userToken);
  */
@@ -55,15 +67,6 @@ const LoginKy = () => {
       }); //변환된 제이슨 덩어리를 setCommentList에 저장해서 관리
   }, []); */
 
-  const handleInputId = e => {
-    // input data에 변화가 있을때마다 value값을 변경해서 useState해줌
-    setInputId(e.target.value);
-  };
-
-  const handleInputPw = e => {
-    setInputPw(e.target.value);
-  };
-
   /*   const handleInputName = e => { //회원가입
     setInputName(e.target.value);
   };
@@ -80,9 +83,10 @@ const LoginKy = () => {
             <h1>Westagram</h1>
             <div className="userID">
               <input
-                onChange={handleInputId}
+                onChange={handleUserInfo}
                 type="text"
-                value={inputId}
+                name="id"
+                value={id}
                 title="사용자 입력"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
               />
@@ -90,9 +94,10 @@ const LoginKy = () => {
 
             <div className="userPW">
               <input
-                onChange={handleInputPw}
+                onChange={handleUserInfo}
                 type="password"
-                value={inputPw}
+                name="pw"
+                value={pw}
                 title="사용자 입력"
                 placeholder="비밀번호"
               />
@@ -122,9 +127,7 @@ const LoginKy = () => {
                 /* onClick={signUp} */ //회원가입
                 type="button"
                 id="activeButton"
-                disabled={
-                  inputId.includes('@') && inputPw.length > 4 ? false : true
-                }
+                disabled={!validation}
               >
                 로그인
               </button>
