@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nickname": "Nu",
+    "comment": "oh! You're so cute",
+    "isLiked": false
+  },
+  {
+    "id": 2,
+    "nickname": "maru",
+    "comment": "Hi there.",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "nickname": "Samsek",
+    "comment": "Hey~ nice to meet you.",
+    "isLiked": false
+  }
+]
