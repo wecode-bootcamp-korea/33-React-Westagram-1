@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "test1",
+    "name": "꼬비",
     "content": "먼치킨 고양이 :)",
     "img": "/images/seulbiKim/cat2.jpeg"
   },
   {
     "id": 2,
-    "name": "test2",
-    "content": "콘텐츠 글내용 !!!",
+    "name": "갱얼연합",
+    "content": "낼롬",
     "img": "/images/seulbiKim/profile02.png"
   }
 ]

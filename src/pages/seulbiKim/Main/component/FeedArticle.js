@@ -28,12 +28,13 @@ const FeedArticle = ({ feedData }) => {
     const filtered = commentList.filter(comment => comment.id !== removeId);
     setCommentList(filtered);
   };
+
   const clickedLike = () => {
     setLiked(isLiked => !isLiked);
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/seulbiCommentData.json')
+    fetch(`http://localhost:3000/data/seulbiCommentData${feedData.id}.json`)
       .then(res => res.json())
       .then(data => setCommentList(data));
   }, []);

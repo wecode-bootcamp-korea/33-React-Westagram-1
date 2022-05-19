@@ -7,7 +7,6 @@ import MainRight from './component/MainRight';
 
 const MainSb = () => {
   const [feedList, setFeedList] = useState([]);
-
   useEffect(() => {
     fetch('http://localhost:3000/data/seulbiFeedData.json')
       .then(res => res.json())
