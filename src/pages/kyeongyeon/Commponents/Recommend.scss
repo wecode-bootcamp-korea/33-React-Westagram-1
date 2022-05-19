@@ -1,0 +1,87 @@
+/*회원님을 위한 추천 부분*/
+.boxRecommend {
+  width: 293px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+
+  .boxRecommenedText {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+
+    .boxRecommenedText span {
+      font-size: 15px;
+    }
+  }
+}
+
+.boxRecommenedText span:first-child {
+  padding-left: 20px;
+  background-color: white;
+  color: #9b9b9b;
+}
+
+.boxRecommenedText span:last-child {
+  padding-right: 20px;
+  background-color: white;
+}
+
+.recommendPeople {
+  background-color: white;
+}
+
+.recommendPeopleInfo {
+  margin-top: 20px;
+  background-color: white;
+}
+
+.recommendPeopleList {
+  list-style: none;
+  margin-left: 20px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.recommnedIdImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+}
+
+.recommendNeighbor {
+  border-radius: 20px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.neighborId {
+  padding-left: 10px;
+  background-color: white;
+}
+
+.recommnedIdImg span {
+  margin-left: 10px;
+  background-color: white;
+}
+
+.blueFont {
+  font-size: 13px;
+  font-weight: bold;
+  color: #3e99ed;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+
+.littleFont {
+  color: #a5a5a5;
+  font-size: 13px;
+  background-color: white;
+  padding-left: 40px;
+}

@@ -1,0 +1,65 @@
+/*스토리 보여지는 부분*/
+.storyBox {
+  width: 293px;
+  height: 300px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+.storyBoxTop {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.storyBox span {
+  font-size: 15px;
+}
+
+.storyBoxTop span:first-child {
+  color: #9b9b9b;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.storyBoxTop span:last-child {
+  padding-right: 20px;
+  background-color: white;
+}
+
+.storyNeighborInfo {
+  padding-top: 10px;
+  background-color: white;
+}
+
+.storyNeighborList {
+  list-style: none;
+  margin-left: 20px;
+  background-color: white;
+  padding-top: 10px;
+}
+
+.storyIdImg {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.storyNeighborhood {
+  width: 30px;
+  border-radius: 30px;
+}
+
+.storyIdImg span {
+  margin-left: 10px;
+  background-color: white;
+}
+
+.agoMinuteFont {
+  font-size: 13px;
+  color: #a5a5a5;
+  padding-left: 40px;
+  background-color: white;
+}

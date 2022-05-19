@@ -1,0 +1,50 @@
+.main {
+  background-color: #fafafa;
+  .feedAsideContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /*여기서 부터 하단 피드 CSS*/
+
+  /*메인피드 정렬*/
+
+  /*   .articleText {
+    margin: 10px 0px;
+    background-color: white;
+  }
+
+  .InputCommentAlign {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    background-color: white;
+  }
+  .commentUserId {
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: white;
+  }
+
+  .commentUserText {
+    background-color: white;
+  }
+ */
+
+  /*   li {
+    list-style: none;
+    background-color: white;
+  }
+
+  .feedList {
+    background-color: white;
+  } */
+
+  /*반응형 웹사이트*/
+  @media (max-width: 800px) {
+    .main_right {
+      display: none;
+    }
+  }
+}

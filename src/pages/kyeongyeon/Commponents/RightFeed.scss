@@ -1,0 +1,43 @@
+/*여기서부터 aisde시작*/
+.mainRight {
+  width: 293px;
+  height: auto;
+  position: fixed;
+  right: 70px;
+  top: 100px;
+
+  .myStory {
+    margin: 33px auto;
+    padding: 10px;
+
+    .myIdImg {
+      display: flex;
+      align-items: center;
+      margin-bottom: -30px;
+
+      .myProfile {
+        border-radius: 40px;
+        width: 40px;
+        height: 40px;
+
+        .setProfile {
+          display: flex;
+          flex-direction: column;
+
+          .profileInfo {
+            /* padding-left: 40px; */
+            color: #9b9b9b;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    color: #c7c7c7;
+    font-size: 13px;
+  }
+}
+
+/*스토리 위에 상단 내 아이디값 보여지는 부분*/
+
+/* footer시작 */

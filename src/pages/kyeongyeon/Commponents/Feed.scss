@@ -1,0 +1,141 @@
+.containerFeedComments {
+  margin: 100px auto;
+  border: 1px solid #e6e6e6;
+  top: 0;
+
+  .feed {
+    width: 614px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+
+      .neighborhoodProfile {
+        width: 614px;
+        height: 70px;
+        background-color: white;
+        border-bottom: 1px solid #e6e6e6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        .neighborhoodProfile span {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.feedImg {
+  vertical-align: bottom;
+  width: 614px;
+}
+/*친구 게시글 피드 이미지랑 아이디 나오는 피드 상단 부분*/
+
+.nProfileLeft {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.neighborImg {
+  width: 40px;
+  border-radius: 40px;
+  border: 1px solid #e6e6e6;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.checkImg {
+  top: 0;
+  width: 614px;
+  height: 54px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkImg img {
+  width: 20px;
+}
+
+.checkImgLeft {
+  background-color: white;
+  margin-left: 10px;
+}
+
+.checkImgLeft img {
+  margin: 6px;
+}
+
+.feedHeart {
+  cursor: pointer;
+}
+
+.feedBookmark {
+  margin: 20px;
+}
+
+.likeFeed {
+  width: 614px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.likeFeed span {
+  background-color: white;
+}
+
+.likesWho {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-left: 10px;
+}
+
+.smallProfile {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid #a5a5a5;
+  margin-right: 10px;
+}
+
+.boldFont {
+  font-weight: bold;
+  background-color: white;
+}
+
+/*본문 글 작성*/
+.feedContent {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 10px 5px;
+  background-color: white;
+}
+.feedContentId {
+  font-weight: bold;
+  padding-left: 15px;
+  background-color: white;
+}
+.feedContentText {
+  padding-left: 10px;
+  background-color: white;
+}
+
+.feedList {
+  background-color: white;
+}
