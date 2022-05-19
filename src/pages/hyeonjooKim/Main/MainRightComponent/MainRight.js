@@ -4,7 +4,7 @@ import './MainRight.scss';
 const MainRight = () => {
   return (
     <section className="mainRight">
-      <div className="userId">
+      <div className="userInfo">
         <div className="profileImgContainer">
           <img src="images/hyeonjooKim/profile02.jpeg" alt="profile" />
         </div>

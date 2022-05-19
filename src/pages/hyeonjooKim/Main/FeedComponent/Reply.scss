@@ -1,3 +1,5 @@
+@import '../../../../styles/variables/variablesHj.scss';
+
 .replyContainer {
   height: 20px;
   margin-top: 5px;
@@ -10,6 +12,6 @@
   button {
     border: none;
     background-color: white;
-    color: rgb(92, 92, 92);
+    color: $theme-icon-color;
   }
 }

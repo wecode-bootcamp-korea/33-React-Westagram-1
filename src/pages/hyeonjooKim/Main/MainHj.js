@@ -9,7 +9,7 @@ function MainHj() {
 
   // mock data를 활용한 피드 입력 확인
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedDataHj.json')
+    fetch('/data/feedDataHj.json')
       .then(res => res.json())
       .then(data => {
         setFeedsList(data);
@@ -17,7 +17,7 @@ function MainHj() {
   }, []);
 
   return (
-    <div className="main">
+    <div className="mainHj">
       <section className="westagram">
         <Nav />
         <main>
@@ -28,6 +28,7 @@ function MainHj() {
                 id={feed.id}
                 userName={feed.userName}
                 content={feed.content}
+                replies={feed.replies}
               />
             );
           })}

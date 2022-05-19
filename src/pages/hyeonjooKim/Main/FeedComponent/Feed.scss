@@ -1,21 +1,10 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin profileImgStyle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+@import '../../../../styles/variables/mixinHj.scss';
+@import '../../../../styles/variables/variablesHj.scss';
 
 .feeds {
   width: 40%;
-  height: 95%;
   margin: 0 10px;
-  border: 1px solid rgb(219, 219, 219);
+  border: 1px solid $theme-main-border-color;
   border-radius: 5px;
   margin-top: 2%;
 
@@ -23,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
+    height: 80px;
     background-color: white;
 
     div {
@@ -31,8 +20,8 @@
       font-weight: bold;
 
       .profileImgContainer {
-        @include profileImgStyle();
-        border: 1px solid rgb(219, 219, 219);
+        @include profileImgStyle(36px, 36px);
+        border: 1px solid $theme-main-border-color;
         margin: 0 10px;
 
         img {
@@ -47,13 +36,11 @@
   }
 
   .mainContent {
-    height: 80%;
-    border-bottom: 1px solid rgb(219, 219, 219);
+    border-bottom: 1px solid $theme-main-border-color;
     background-color: white;
 
     .contentImgContainer {
-      width: 100%;
-      height: 75%;
+      height: 50vh;
       overflow: hidden;
 
       img {
@@ -67,17 +54,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 8%;
+      height: 50px;
 
       i {
-        color: rgb(92, 92, 92);
+        color: $theme-icon-color;
         font-size: 24px;
         margin: 0 5px;
       }
     }
 
     .textSection {
-      height: 17%;
       overflow-y: scroll;
 
       p {

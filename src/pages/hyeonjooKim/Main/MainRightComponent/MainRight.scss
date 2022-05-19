@@ -1,9 +1,5 @@
-@mixin profileImgStyle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+@import '../../../../styles/variables/mixinHj.scss';
+@import '../../../../styles/variables/variablesHj.scss';
 
 .mainRight {
   display: flex;
@@ -16,15 +12,13 @@
   height: 95%;
   margin: 0 10px;
 
-  .userId {
+  .userInfo {
     display: flex;
     align-items: center;
     height: 15%;
 
     .profileImgContainer {
-      @include profileImgStyle;
-      width: 48px;
-      height: 48px;
+      @include profileImgStyle(48px, 48px);
       margin: 0 10px;
 
       img {
@@ -37,7 +31,7 @@
       font-weight: bold;
 
       li:last-child {
-        color: rgb(179, 179, 179);
+        color: $theme-font-lightgray-color;
       }
     }
   }

@@ -10,7 +10,7 @@ const SubSection = ({ title }) => {
       </div>
       <ul>
         {title === '스토리' &&
-          stories.map(story => {
+          STORIES.map(story => {
             return (
               <UserId
                 key={story.id}
@@ -20,7 +20,7 @@ const SubSection = ({ title }) => {
             );
           })}
         {title === '회원님을 위한 추천' &&
-          recommendations.map(recommendation => {
+          RECOMMENDATIONS.map(recommendation => {
             return (
               <UserId
                 key={recommendation.id}
@@ -34,7 +34,7 @@ const SubSection = ({ title }) => {
   );
 };
 
-const stories = [
+const STORIES = [
   {
     id: 1,
     userName: 'Ballast Point',
@@ -49,7 +49,7 @@ const stories = [
   },
 ];
 
-const recommendations = [
+const RECOMMENDATIONS = [
   {
     id: 1,
     userName: 'Lager',

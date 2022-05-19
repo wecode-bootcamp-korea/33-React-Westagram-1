@@ -1,9 +1,4 @@
-@mixin profileImgStyle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+@import '../../../../styles/variables/variablesHj.scss';
 
 .subSection {
   height: 190px;
@@ -23,41 +18,7 @@
       font-weight: bold;
 
       &:first-child {
-        color: rgb(179, 179, 179);
-      }
-    }
-  }
-
-  ul > li {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    font-weight: bold;
-
-    .profileImgContainer {
-      @include profileImgStyle;
-      margin: 0 10px;
-      border: 2px solid red;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  &:last-child {
-    ul > li > span:last-child {
-      color: rgb(94, 169, 243);
-      margin: 0 10px 0 auto;
-    }
-
-    .profileImgContainer {
-      @include profileImgStyle;
-      margin: 0 10px;
-      border: none;
-
-      img {
-        width: 100%;
+        color: $theme-font-lightgray-color;
       }
     }
   }

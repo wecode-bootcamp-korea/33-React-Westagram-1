@@ -1,10 +1,12 @@
+@import '../../../styles/variables/variablesHj.scss';
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login {
+.loginHj {
   @include flex-center;
   height: 100vh;
 
@@ -13,7 +15,7 @@
     flex-direction: column;
     width: 350px;
     height: 400px;
-    border: 2px solid rgb(235, 235, 235);
+    border: 2px solid $theme-main-border-color;
     border-radius: 5px;
 
     p.logo {
@@ -29,12 +31,12 @@
       height: 38px;
       border: none;
       border-radius: 5px;
-      background-color: rgb(0, 149, 246);
+      background-color: $theme-button-active-color;
       color: white;
       cursor: pointer;
 
       &:disabled {
-        background-color: rgb(192, 223, 253);
+        background-color: $theme-button-inactive-color;
         cursor: auto;
       }
     }
@@ -49,7 +51,7 @@
       cursor: pointer;
 
       &:disabled {
-        color: lightgray;
+        color: $theme-font-lightgray-color;
         cursor: auto;
       }
     }

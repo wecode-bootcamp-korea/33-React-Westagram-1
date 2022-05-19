@@ -1,10 +1,12 @@
+@import '../../../styles/variables/variablesHj.scss';
+
 input {
   width: 268px;
   height: 38px;
   margin-bottom: 10px;
-  border: 1px solid rgb(243, 243, 243);
+  border: 1px solid $theme-login-border-color;
   border-radius: 5px;
-  background-color: rgb(250, 250, 250);
+  background-color: $theme-loginInput-border-color;
 
   &:focus {
     outline: none;

@@ -1,5 +1,8 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/variables/mixinHj.scss';
+
 @media screen and (max-width: 1500px) {
-  .main {
+  .mainHj {
     .westagram {
       main {
         section.mainRight {
@@ -13,32 +16,13 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
+.mainHj {
   -ms-overflow-style: none;
-}
 
-::-webkit-scrollbar {
-  display: none;
-}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin profileImgStyle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.main {
   .westagram {
     @include flex-center;
     flex-direction: column;

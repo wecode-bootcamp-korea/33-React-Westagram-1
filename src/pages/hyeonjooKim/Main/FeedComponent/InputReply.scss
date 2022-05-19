@@ -1,14 +1,16 @@
+@import '../../../../styles/variables/variablesHj.scss';
+
 .replySection {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10%;
   background-color: white;
 
   input {
     flex: 9;
     border: none;
     margin: 0;
+    height: 80px;
     background-color: white;
 
     &:focus {
@@ -16,7 +18,7 @@
     }
 
     &::placeholder {
-      color: rgb(219, 219, 219);
+      color: $theme-main-border-color;
       font-size: 16px;
       font-weight: bold;
     }
@@ -26,13 +28,13 @@
     flex: 1;
     border: none;
     background-color: white;
-    color: rgb(0, 149, 246);
+    color: $theme-button-active-color;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 
     &:disabled {
-      color: rgb(209, 230, 252);
+      color: $theme-button-inactive-color;
       cursor: auto;
     }
   }

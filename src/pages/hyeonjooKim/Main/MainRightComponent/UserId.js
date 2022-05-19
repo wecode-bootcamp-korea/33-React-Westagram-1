@@ -2,7 +2,7 @@ import './UserId.scss';
 
 const UserId = ({ userName, category }) => {
   return (
-    <li>
+    <li className={`userId ${category}`}>
       <div className="profileImgContainer">
         <img src="images/hyeonjooKim/profile01.jpeg" alt="profile" />
       </div>

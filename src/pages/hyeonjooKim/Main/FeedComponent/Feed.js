@@ -3,9 +3,9 @@ import Reply from './Reply';
 import InputReply from './InputReply';
 import './Feed.scss';
 
-const Feed = ({ id, userName, content }) => {
+const Feed = ({ id, userName, content, replies }) => {
   const [reply, setReply] = useState([]);
-  const [replyId, setReplyId] = useState(0);
+  const [replyId, setReplyId] = useState(100);
 
   const saveReply = inputValue => {
     setReply(prevState => {
@@ -25,14 +25,9 @@ const Feed = ({ id, userName, content }) => {
     setReply(reply.filter(ele => ele.id !== id));
   };
 
-  // mock data를 활용한 댓글 입력 확인
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentDataHj.json')
-      .then(res => res.json())
-      .then(data => {
-        setReply(data);
-      });
-  }, []);
+    setReply(replies);
+  }, [replies]);
 
   return (
     <section className="feeds">
