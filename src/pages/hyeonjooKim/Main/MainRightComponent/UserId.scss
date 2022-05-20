@@ -1,0 +1,41 @@
+@import '../../../../styles/variables/mixinHj.scss';
+@import '../../../../styles/variables/variablesHj.scss';
+
+.userId.story {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-weight: bold;
+
+  .profileImgContainer {
+    @include profileImgStyle(36px, 36px);
+    margin: 0 10px;
+    border: 2px solid red;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.userId.recommendation {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-weight: bold;
+
+  span:last-child {
+    color: $theme-button-active-color;
+    margin: 0 10px 0 auto;
+  }
+
+  .profileImgContainer {
+    @include profileImgStyle(36px, 36px);
+    margin: 0 10px;
+    border: none;
+
+    img {
+      width: 100%;
+    }
+  }
+}

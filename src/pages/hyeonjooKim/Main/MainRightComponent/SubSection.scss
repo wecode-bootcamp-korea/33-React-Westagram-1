@@ -1,0 +1,25 @@
+@import '../../../../styles/variables/variablesHj.scss';
+
+.subSection {
+  height: 190px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: white;
+
+  .subTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+
+    span {
+      margin: 0 10px;
+      font-weight: bold;
+
+      &:first-child {
+        color: $theme-font-lightgray-color;
+      }
+    }
+  }
+}

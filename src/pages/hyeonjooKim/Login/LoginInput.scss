@@ -1,0 +1,14 @@
+@import '../../../styles/variables/variablesHj.scss';
+
+input {
+  width: 268px;
+  height: 38px;
+  margin-bottom: 10px;
+  border: 1px solid $theme-login-border-color;
+  border-radius: 5px;
+  background-color: $theme-loginInput-border-color;
+
+  &:focus {
+    outline: none;
+  }
+}

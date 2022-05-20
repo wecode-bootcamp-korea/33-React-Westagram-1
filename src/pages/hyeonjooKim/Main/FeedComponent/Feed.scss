@@ -1,0 +1,81 @@
+@import '../../../../styles/variables/mixinHj.scss';
+@import '../../../../styles/variables/variablesHj.scss';
+
+.feeds {
+  width: 40%;
+  margin: 0 10px;
+  border: 1px solid $theme-main-border-color;
+  border-radius: 5px;
+  margin-top: 2%;
+
+  .writerProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: white;
+
+    div {
+      @include flex-center;
+      font-weight: bold;
+
+      .profileImgContainer {
+        @include profileImgStyle(36px, 36px);
+        border: 1px solid $theme-main-border-color;
+        margin: 0 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  .mainContent {
+    border-bottom: 1px solid $theme-main-border-color;
+    background-color: white;
+
+    .contentImgContainer {
+      height: 50vh;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .buttonSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+
+      i {
+        color: $theme-icon-color;
+        font-size: 24px;
+        margin: 0 5px;
+      }
+    }
+
+    .textSection {
+      overflow-y: scroll;
+
+      p {
+        padding: 5px;
+        color: black;
+        font-weight: normal;
+
+        .userId {
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

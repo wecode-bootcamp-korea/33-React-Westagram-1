@@ -1,0 +1,38 @@
+@import '../../../../styles/variables/mixinHj.scss';
+@import '../../../../styles/variables/variablesHj.scss';
+
+.mainRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 60px;
+  right: 200px;
+  width: 30%;
+  height: 95%;
+  margin: 0 10px;
+
+  .userInfo {
+    display: flex;
+    align-items: center;
+    height: 15%;
+
+    .profileImgContainer {
+      @include profileImgStyle(48px, 48px);
+      margin: 0 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    ul {
+      font-size: 20px;
+      font-weight: bold;
+
+      li:last-child {
+        color: $theme-font-lightgray-color;
+      }
+    }
+  }
+}

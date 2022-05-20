@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode",
+    "content": " 맥주 다시 개시합니다.",
+    "replies": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "첫번째 피드의 첫번째 댓글입니다."
+      },
+      {
+        "id": 2,
+        "userName": "wecode1",
+        "content": "첫번째 피드의 두번째 댓글입니다."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "hj_kim",
+    "content": " 싱가포르에서",
+    "replies": [
+      {
+        "id": 1,
+        "userName": "hj_kim1",
+        "content": "두번째 피드의 첫번째 댓글입니다."
+      },
+      {
+        "id": 2,
+        "userName": "hj_kim2",
+        "content": "두번째 피드의 두번째 댓글입니다."
+      }
+    ]
+  }
+]

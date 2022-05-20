@@ -1,0 +1,39 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/variables/mixinHj.scss';
+
+@media screen and (max-width: 1500px) {
+  .mainHj {
+    .westagram {
+      main {
+        section.mainRight {
+          display: none;
+        }
+        section.feeds {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.mainHj {
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .westagram {
+    @include flex-center;
+    flex-direction: column;
+    height: 100vh;
+
+    main {
+      position: relative;
+      left: 200px;
+      overflow: scroll;
+      width: 95%;
+      height: 85%;
+    }
+  }
+}
