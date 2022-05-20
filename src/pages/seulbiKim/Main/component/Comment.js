@@ -7,6 +7,7 @@ const Comment = ({ commentData, commentRemove }) => {
   const clickedLike = () => {
     setCommentLiked(isLiked => !isLiked);
   };
+
   return (
     <li>
       <div className="commentsCommented">
@@ -29,8 +30,7 @@ const Comment = ({ commentData, commentRemove }) => {
 
       <CgRemove
         className="articleDataIconsRemove"
-        id={commentData.id}
-        onClick={commentRemove}
+        onClick={() => commentRemove(commentData.id)}
       />
     </li>
   );

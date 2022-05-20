@@ -23,8 +23,8 @@ const FeedArticle = ({ feedData }) => {
     setComment(e.target.value);
   };
 
-  const commentRemove = e => {
-    const removeId = parseInt(e.target.id);
+  const commentRemove = id => {
+    const removeId = parseInt(id);
     const filtered = commentList.filter(comment => comment.id !== removeId);
     setCommentList(filtered);
   };

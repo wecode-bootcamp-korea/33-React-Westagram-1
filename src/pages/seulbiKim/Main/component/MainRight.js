@@ -43,8 +43,8 @@ const MainRight = () => {
         </div>
         <footer className="mainRightFooter">
           <ul>
-            {MAIN_RIGHT_FOOTER.map(list => {
-              return <li>{list}</li>;
+            {MAIN_RIGHT_FOOTER.map((list, index) => {
+              return <li key={index}>{list}</li>;
             })}
           </ul>
         </footer>
