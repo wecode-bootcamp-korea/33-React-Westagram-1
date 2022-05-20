@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/common.scss';
+
+$white-color: rgb(250, 250, 250);
+$gray1-color: rgb(219, 219, 219);
+
+.loginSb {
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .loginContainer {
+      @include flex-center;
+      flex-direction: column;
+      padding: 10px 0;
+      border: 1px solid $gray1-color;
+      background-color: $white-color;
+    }
+
+    .loginLogo {
+      margin: 25px 80px 30px 80px;
+      font-family: 'Lobster', cursive;
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input,
+    textarea {
+      background-color: $white-color;
+    }
+
+    .loginInputId,
+    .loginInputPw {
+      width: 250px;
+      height: 20px;
+      margin: 3px 0;
+      padding: 18px 10px;
+      border: 1px solid $gray1-color;
+      border-radius: 3px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .loginBtn {
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 32px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 3px;
+      color: $white-color;
+      background-color: rgb(197, 229, 255);
+      cursor: pointer;
+
+      &:enabled {
+        background-color: rgb(11, 161, 255);
+      }
+    }
+
+    .message {
+      margin: 90px 0 20px 0;
+      font-size: 14px;
+
+      .text {
+        color: rgb(0, 80, 190);
+        text-decoration: none;
+      }
+    }
+  }
+}

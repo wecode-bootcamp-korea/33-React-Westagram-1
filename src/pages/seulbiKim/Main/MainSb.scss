@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/common.scss';
+
+$white-color: rgb(250, 250, 250);
+$gray1-color: rgb(219, 219, 219);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $white-color;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mainSb {
+  p span {
+    font-weight: 700;
+  }
+
+  p,
+  span {
+    font-size: 14px;
+  }
+
+  /* main */
+  main {
+    @include flex-center;
+    margin-top: 90px;
+
+    .mainContainer {
+      display: flex;
+      max-width: 930px;
+    }
+
+    .feeds {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      article {
+        display: flex;
+        flex-direction: column;
+        max-width: 614px;
+        margin-bottom: 20px;
+        border: 1px solid $gray1-color;
+        background-color: $white-color;
+      }
+
+      article header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding: 0 20px;
+      }
+
+      .articleHeaderProfile {
+        @include flex-center;
+
+        .articleHeaderProfileImg {
+          width: 32px;
+          height: 32px;
+          margin-right: 15px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .articleHeaderProfileName {
+          font-weight: 600;
+        }
+      }
+
+      .articleHeaderMore img {
+        width: 23px;
+        color: rgb(55, 55, 55);
+        cursor: pointer;
+      }
+
+      /* article__Img */
+      .articleImg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* article__data */
+      .articleData {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 15px 0 15px;
+      }
+
+      .articleDataIcons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .articleDataIconsLeft {
+        display: flex;
+        align-items: center;
+      }
+
+      .articleDataIconHeart {
+        margin-right: 0px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .articleDataIconsRemove {
+        font-size: 18px;
+        cursor: pointer;
+        margin-left: 5px;
+        color: rgb(180, 180, 180);
+      }
+
+      .articleDataIconsLeft img,
+      .articleDataIconRight {
+        height: 23px;
+        margin-left: 15px;
+        cursor: pointer;
+      }
+
+      .articleDataIconRight {
+        margin-right: 0;
+      }
+
+      .articleDataReaction {
+        margin-top: 10px;
+      }
+
+      .reactionLiked {
+        margin-top: 8px;
+        font-weight: 600;
+      }
+
+      .reactionAuthorPost {
+        margin-top: 10px;
+      }
+
+      /* comments */
+      .reactionComments {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .reactionComments ul li {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .commentsCommented {
+          flex: 1;
+          margin-top: 5px;
+
+          span {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      li .articleDataIconsHeart {
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      .fill {
+        color: rgb(255, 73, 73);
+      }
+
+      .reactionComments ul li img {
+        width: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      /* comments date */
+      .reactionComments {
+        .date {
+          margin: 8px 0;
+          color: rgb(180, 180, 180);
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+
+      /* comments form */
+      .commentForm {
+        @include flex-center;
+        flex-wrap: wrap;
+        height: 55px;
+        border-top: 1px solid $gray1-color;
+      }
+
+      .commentForm img {
+        width: 23px;
+        height: 23px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .commentForm input {
+        flex: 8;
+        height: 20px;
+        border: 0;
+        background-color: $white-color;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .commentForm button {
+        width: 50px;
+        border: none;
+        color: rgb(117, 190, 235);
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: end;
+        cursor: pointer;
+      }
+
+      .commentForm button {
+        .active {
+          color: rgb(30, 151, 226);
+        }
+      }
+    }
+
+    /* main-right */
+    .mainRightContainer {
+      width: 300px;
+      margin-left: 20px;
+    }
+
+    .mainRight {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+    }
+
+    .mainRightProfile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mainRightProfileLeft {
+      @include flex-center;
+    }
+
+    .mainRightProfileLeftImg {
+      width: 56px;
+      height: 56px;
+      margin-right: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .mainRightProfileLeftIdData {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mainRightProfileLeftIdData span:first-child {
+      font-weight: 600;
+    }
+    .mainRightProfileLeftIdData span:last-child {
+      margin-top: 2px;
+      color: gray;
+    }
+
+    .mainRightProfileIdSwitch {
+      color: rgb(11, 161, 255);
+      font-size: 14px;
+    }
+
+    .mainRightRecommend {
+      margin-top: 25px;
+    }
+
+    .mainRightRecommendTitle {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mainRightRecommendTitle span {
+      color: gray;
+      font-weight: 600;
+    }
+
+    .mainRightRecommendTitle a {
+      color: black;
+      font-size: 12px;
+    }
+
+    .mainRightRecommendList {
+      margin-top: 15px;
+    }
+
+    .mainRightRecommendList li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .mainRightRecommendListLeft {
+      display: flex;
+    }
+
+    .recommendListImg {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .recommendListInfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .recommendListInfoId {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .recommendListInfoFollow {
+      color: gray;
+      font-size: 12px;
+    }
+
+    .recommendListFollowBtn {
+      color: rgb(11, 161, 255);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .mainRightFooter {
+      margin-top: 40px;
+    }
+
+    .mainRightFooter ul {
+      display: flex;
+      flex-wrap: wrap;
+      color: rgb(180, 180, 180);
+      font-size: 12px;
+    }
+
+    .mainRightFooter li {
+      position: relative;
+      margin-right: 10px;
+    }
+  }
+}
