@@ -7,7 +7,6 @@ import './MainHj.scss';
 function MainHj() {
   const [feedsList, setFeedsList] = useState([]);
 
-  // mock data를 활용한 피드 입력 확인
   useEffect(() => {
     fetch('/data/feedDataHj.json')
       .then(res => res.json())
